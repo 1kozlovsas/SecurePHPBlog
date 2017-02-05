@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS users (
   attempt text NOT NULL DEFAULT '0',
   profile text,
   avatar text,
-  role text,
+  role text NOT NULL DEFAULT 'user',
   PRIMARY KEY (id)
 );
 
@@ -48,6 +48,6 @@ CREATE TABLE IF NOT EXISTS posts (
   id SERIAL,
   username text NOT NULL references users(username),
   body text NOT NULL,
-  created date NOT NULL default CURRENT_DATE,
+  created text NOT NULL,
   PRIMARY KEY (id)
 );
