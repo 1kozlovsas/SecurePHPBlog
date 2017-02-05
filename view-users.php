@@ -12,10 +12,11 @@ include ('requires/header.php');
 </thead>		
 <tbody>		 
 <?php
-$dbname = "";
-$user = "";
-$password = "";              
-$db = pg_connect('host=localhost dbname='.$dbname.'user='.$user.'password='.$password);             
+$dbname = ""
+$user = ""
+$password = ""
+$connect = 'host=localhost dbname='.$dbname.' user='.$user.' password='.$password; 
+$db = pg_connect($connect);
 $query = "SELECT username FROM users";             
 $result = pg_query($query);            
 if (!$result) {                
@@ -27,7 +28,7 @@ echo '<tr>
 <td>                
 <a href="view-posts.php?username='.$row['username'].'">                
 <button type="button" class="btn btn-info">'.$row['username'].'
-<button>                
+</button>                
 </a>            
 </tr>';            
 }            

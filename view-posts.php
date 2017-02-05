@@ -14,12 +14,15 @@ include('requires/header.php');
 </thead>	
 <tbody>		
 <?php		
-$dbconn = pg_connect("host = localhost dbname=test1 user=test1 password=1kozlovsas")	
+$dbname = "";
+$user = "";
+$password = "";
+$dbconn = pg_connect('host = localhost dbname='.$dbname.' user='.$user.' password='.$password)	
 or die("Could not connect");	
 ?>	
 <?php	
 $res = pg_query_params($dbconn, 'SELECT username, body, created FROM posts where username = $1',[$_GET["username"]]);	
-foreach(pg_fetch_all($res) as $line){ ?>	
+while($line = pg_fetch_all($res)){ ?>	
 <tr>		
 <?php foreach($line as $cell){ ?>	
 <td>	
