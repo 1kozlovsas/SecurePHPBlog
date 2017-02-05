@@ -1,0 +1,9 @@
+sudo apt-get install imagemagick php5-imagick
+wget http://pear.php.net/go-pear.phar
+sudo php go-pear.phar
+sudo apt-get install php5-dev pkg-config libmagickwand-dev libmagickcore-dev
+sudo pecl install imagick
+sudo echo extension=imagick.so >> /etc/php5/cli/php.ini
+Make sure /etc/php5/cli/conf.d/*-imagick.ini has its line uncommented
+(for nginx: sudo service nginx restart)
+sudo service apache2 restart
