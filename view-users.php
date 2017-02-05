@@ -1,4 +1,5 @@
 <?php
+session_start();
 include ('requires/header.php');
 ?>
 <h1>Pick a user. Any user. I dare you.</h1>
