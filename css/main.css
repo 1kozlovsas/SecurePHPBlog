@@ -4,7 +4,10 @@
    Author's custom styles
    ========================================================================== */
 
-
+.jumbotron {
+    background-image: url("../bg/dark_embroidery.png");
+    color:coral;
+}
 
 
 
