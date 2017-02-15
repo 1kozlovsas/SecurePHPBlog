@@ -27,7 +27,7 @@ $LS = new \Fr\LS(array(
       "/Assignment 2/view-recent.php",
       "/Assignment 2/view-posts.php",
       "/Assignment 2/create-account.php",
-      "/Assignment 2/index.php"
+      "/Assignment%202/index.php"
     ),
     "login_page" => "/Assignment 2/login.php",
     "home_page" => "/Assignment 2/manage-account.php"
