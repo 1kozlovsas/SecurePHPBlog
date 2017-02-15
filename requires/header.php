@@ -1,6 +1,8 @@
 <?php
 require "requires/config.php";
 if(isset($_POST['action_login'])){
+    echo "error";
+    die();
 	$identification = $_POST['login'];
 	$password = $_POST['password'];
 	if($identification == "" || $password == ""){
