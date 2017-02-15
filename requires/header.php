@@ -32,7 +32,7 @@
           <a class="navbar-brand" href="#">InterBlarg</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-         <form action="requires/header.php" method="POST" class="navbar-form navbar-right" role="form">
+      <!--   <form action="requires/header.php" method="POST" class="navbar-form navbar-right" role="form">
             <div class="form-group">
               <input type="text" placeholder="Email" class="form-control">
             </div>
@@ -40,9 +40,9 @@
               <input type="password" placeholder="Password" class="form-control">
             </div>
             <button type="submit" class="btn btn-success" name="action_login">Sign in</button>
-          </form> 
-
-          <!--<a class="navbar-brand navbar-right" href="#">Welcome Ian!</a>-->
+          </form> -->
+          <a class="navbar-brand navbar-right" href="login.php">Login</a>
+          <a class="navbar-brand navbar-right" href="create-account.php">Sign up</a>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>

@@ -14,11 +14,11 @@ include 'requires/header.php';
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
-        <div class="col-md-4">
+     <!--   <div class="col-md-4">
           <h2>Sign Up</h2>
           <p>Create an account and start blurging immediately</p>
           <p><a class="btn btn-default" href="create-account.php" role="button">Alright! &raquo;</a></p>
-        </div>
+        </div> -->
         <div class="col-md-4">
           <h2>Recent Blegs</h2>
           <p>Check out what other cool people are blorping on the interwebs </p>
