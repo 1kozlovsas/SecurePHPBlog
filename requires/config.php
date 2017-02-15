@@ -4,7 +4,7 @@
  */
 ini_set("display_errors", "on");
 
-require __DIR__ . "LS.php";
+require __DIR__ . "/LS.php";
 $LS = new \Fr\LS(array(
   "db" => array(
     "type" => "postgresql",
