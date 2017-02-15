@@ -1,21 +1,3 @@
-<?php
-require "requires/config.php";
-if(isset($_POST['action_login'])){
-	$identification = $_POST['login'];
-	$password = $_POST['password'];
-	if($identification == "" || $password == ""){
-		$msg = array("Error", "Username / Password Wrong !");
-	}else{
-		$login = $LS->login($identification, $password, isset($_POST['remember_me']));
-		if($login === false){
-			$msg = array("Error", "Username / Password Wrong !");
-		}else if(is_array($login) && $login['status'] == "blocked"){
-			$msg = array("Error", "Too many login attempts. You can attempt login after ". $login['minutes'] ." minutes (". $login['seconds'] ." seconds)");
-		}
-	}
-}
-?>
-
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
