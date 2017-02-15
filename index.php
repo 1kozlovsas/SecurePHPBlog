@@ -1,5 +1,5 @@
 <?php
-readfile('requires/header.php');
+include 'requires/header.php';
 ?>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -35,5 +35,5 @@ readfile('requires/header.php');
 
 
 <?php
-readfile('requires/footer.php');
+include 'requires/footer.php';
 ?>
