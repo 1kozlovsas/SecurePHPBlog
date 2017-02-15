@@ -1,5 +1,5 @@
 <?php
-require "requires/config.php";
+//require "requires/config.php";
 if(isset($_POST['action_login'])){
 	$identification = $_POST['login'];
 	$password = $_POST['password'];
