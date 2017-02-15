@@ -1,3 +1,21 @@
+<?php
+require "config.php";
+if(isset($_POST['action_login'])){
+	$identification = $_POST['login'];
+	$password = $_POST['password'];
+	if($identification == "" || $password == ""){
+		$msg = array("Error", "Username / Password Wrong !");
+	}else{
+		$login = $LS->login($identification, $password, isset($_POST['remember_me']));
+		if($login === false){
+			$msg = array("Error", "Username / Password Wrong !");
+		}else if(is_array($login) && $login['status'] == "blocked"){
+			$msg = array("Error", "Too many login attempts. You can attempt login after ". $login['minutes'] ." minutes (". $login['seconds'] ." seconds)");
+		}
+	}
+}
+?>
+
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -32,17 +50,17 @@
           <a class="navbar-brand" href="#">InterBlarg</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-         <!-- <form class="navbar-form navbar-right" role="form">
+         <form action="header.php" method="POST" class="navbar-form navbar-right" role="form">
             <div class="form-group">
               <input type="text" placeholder="Email" class="form-control">
             </div>
             <div class="form-group">
               <input type="password" placeholder="Password" class="form-control">
             </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form> -->
+            <button type="submit" class="btn btn-success" name="action_login">Sign in</button>
+          </form> 
 
-          <a class="navbar-brand navbar-right" href="#">Welcome Ian!</a>
+          <!--<a class="navbar-brand navbar-right" href="#">Welcome Ian!</a>-->
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
