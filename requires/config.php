@@ -21,13 +21,15 @@ $LS = new \Fr\LS(array(
   "pages" => array(
     "no_login" => array(
       "/",
-      "/examples/basic/reset.php",
-      "/examples/basic/register.php"
+      "/view-users.php",
+      "/view-recent.php",
+      "/view-posts.php",
+      "/create-account.php"
     ),
     "everyone" => array(
       "/examples/basic/status.php"
     ),
-    "login_page" => "/examples/basic/login.php",
-    "home_page" => "/examples/basic/home.php"
+    "login_page" => "/create-account.php",
+    "home_page" => "/index.php"
   )
 ));
