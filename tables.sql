@@ -12,6 +12,9 @@ CREATE TABLE IF NOT EXISTS users (
   name text NOT NULL,
   created text NOT NULL,
   attempt text NOT NULL DEFAULT '0',
+  profile text,
+  avatar text,
+  role text,
   PRIMARY KEY (id)
 );
 
@@ -34,5 +37,17 @@ CREATE TABLE IF NOT EXISTS user_devices (
   uid int NOT NULL, -- The user's ID
   token character(15) NOT NULL, -- A unique token for the user's device
   last_access text NOT NULL,
+  PRIMARY KEY (id)
+);
+
+--
+-- Table structure for table posts
+--
+
+CREATE TABLE IF NOT EXISTS posts (
+  id SERIAL,
+  username text NOT NULL references users(username),
+  body text NOT NULL,
+  created date NOT NULL default CURRENT_DATE,
   PRIMARY KEY (id)
 );
