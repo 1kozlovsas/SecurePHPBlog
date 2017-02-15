@@ -1,5 +1,5 @@
 <?php
-require "config.php";
+require "requires/config.php";
 if(isset($_POST['action_login'])){
 	$identification = $_POST['login'];
 	$password = $_POST['password'];
@@ -50,7 +50,7 @@ if(isset($_POST['action_login'])){
           <a class="navbar-brand" href="#">InterBlarg</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-         <form action="header.php" method="POST" class="navbar-form navbar-right" role="form">
+         <form action="requires/header.php" method="POST" class="navbar-form navbar-right" role="form">
             <div class="form-group">
               <input type="text" placeholder="Email" class="form-control">
             </div>
