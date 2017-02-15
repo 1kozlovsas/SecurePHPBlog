@@ -6,7 +6,7 @@ SET TIME ZONE 'UTC';
 
 CREATE TABLE IF NOT EXISTS users (
   id SERIAL,
-  username text NOT NULL,
+  username text NOT NULL UNIQUE,
   email text NOT NULL,
   password text NOT NULL,
   name text NOT NULL,
