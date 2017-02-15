@@ -22,14 +22,14 @@ $LS = new \Fr\LS(array(
     "no_login" => array(
     ),
     "everyone" => array(
-      "/Assignment 2/",
-      "/Assignment 2/view-users.php",
-      "/Assignment 2/view-recent.php",
-      "/Assignment 2/view-posts.php",
-      "/Assignment 2/create-account.php",
+      "/Assignment%202/",
+      "/Assignment%202/view-users.php",
+      "/Assignment%202/view-recent.php",
+      "/Assignment%202/view-posts.php",
+      "/Assignment%202/create-account.php",
       "/Assignment%202/index.php"
     ),
-    "login_page" => "/Assignment 2/login.php",
-    "home_page" => "/Assignment 2/manage-account.php"
+    "login_page" => "/Assignment%202/login.php",
+    "home_page" => "/Assignment%202/manage-account.php"
   )
 ));
