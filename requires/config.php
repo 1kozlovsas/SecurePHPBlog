@@ -4,12 +4,12 @@
  */
 ini_set("display_errors", "on");
 
-require __DIR__ . "/../../src/LS.php";
+require __DIR__ . "LS.php";
 $LS = new \Fr\LS(array(
   "db" => array(
     "type" => "postgresql",
     "host" => "localhost",
-    "port" => 3306,
+    "port" => 5432,
     "username" => "postgres",
     "password" => "postgres",
     "name" => "postgres",
