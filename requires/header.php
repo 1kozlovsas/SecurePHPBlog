@@ -47,7 +47,7 @@ if(isset($_POST['action_login'])){
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">InterBlarg</a>
+          <a class="navbar-brand" href="/">InterBlarg</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
       <!--   <form action="requires/header.php" method="POST" class="navbar-form navbar-right" role="form">
