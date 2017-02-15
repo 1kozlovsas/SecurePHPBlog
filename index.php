@@ -1,3 +1,4 @@
+
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -9,7 +10,6 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <style>
@@ -67,13 +67,13 @@
         </div>
         <div class="col-md-4">
           <h2>Recent Blegs</h2>
-          <p>Check out what other cool people are borping on the interwebs </p>
-          <p><a class="btn btn-default" href="view-users.php" role="button">Check 'em! &raquo;</a></p>
+          <p>Check out what other cool people are blorping on the interwebs </p>
+          <p><a class="btn btn-default" href="view-recent.php" role="button">Check 'em! &raquo;</a></p>
        </div>
         <div class="col-md-4">
           <h2>View Users</h2>
           <p>Look at all the cool people who also use this site</p>
-          <p><a class="btn btn-default" href="#" role="button">Users! &raquo;</a></p>
+          <p><a class="btn btn-default" href="view-users.php" role="button">Users! &raquo;</a></p>
         </div>
       </div>
 
