@@ -31,6 +31,6 @@ $LS = new \Fr\LS(array(
       "/examples/basic/status.php"
     ),
     "login_page" => "/Assignment 2/login.php",
-    "home_page" => isset($_SESSION['current_page'])?$_SESSION['current_page']:"/Assignment 2/manage-account.php"
+    "home_page" => "/Assignment 2/manage-account.php"
   )
 ));
