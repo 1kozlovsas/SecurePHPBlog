@@ -29,7 +29,7 @@ $LS = new \Fr\LS(array(
     "everyone" => array(
       "/examples/basic/status.php"
     ),
-    "login_page" => "/Assignment 2/create-account.php",
-    "home_page" => "/Assignment 2/index.php"
+    "login_page" => "/Assignment 2/login.php",
+    "home_page" => isset($_SESSION['current_page'])?$_SESSION['current_page']:"/Assignment 2/index.php";
   )
 ));
