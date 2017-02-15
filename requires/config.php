@@ -24,7 +24,8 @@ $LS = new \Fr\LS(array(
       "/Assignment 2/view-users.php",
       "/Assignment 2/view-recent.php",
       "/Assignment 2/view-posts.php",
-      "/Assignment 2/create-account.php"
+      "/Assignment 2/create-account.php",
+      "/Assignment 2/index.php"
     ),
     "everyone" => array(
       "/examples/basic/status.php"
