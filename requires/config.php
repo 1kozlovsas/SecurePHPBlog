@@ -20,16 +20,16 @@ $LS = new \Fr\LS(array(
   ),
   "pages" => array(
     "no_login" => array(
-      "/",
-      "/view-users.php",
-      "/view-recent.php",
-      "/view-posts.php",
-      "/create-account.php"
+      "/Assignment 2/",
+      "/Assignment 2/view-users.php",
+      "/Assignment 2/view-recent.php",
+      "/Assignment 2/view-posts.php",
+      "/Assignment 2/create-account.php"
     ),
     "everyone" => array(
       "/examples/basic/status.php"
     ),
-    "login_page" => "/create-account.php",
-    "home_page" => "/index.php"
+    "login_page" => "/Assignment 2/create-account.php",
+    "home_page" => "/Assignment 2/index.php"
   )
 ));
