@@ -1,5 +1,5 @@
 <?php
-readfile ('requires/header.php');
+include ('requires/header.php');
 ?>
 <h1>Pick a user. Any user. I dare you.</h1>
 
@@ -11,9 +11,9 @@ readfile ('requires/header.php');
 </thead>		
 <tbody>		 
 <?php
-$dbname = "test1";
-$user = "test1";
-$password = "1kozlovsas";              
+$dbname = "";
+$user = "";
+$password = "";              
 $db = pg_connect('host=localhost dbname='.$dbname.'user='.$user.'password='.$password);             
 $query = "SELECT username FROM users";             
 $result = pg_query($query);            
@@ -34,5 +34,5 @@ echo '<tr>
 </tbody>	
 </table>	
 <?php
-readfile ('requires/footer.php');
+include ('requires/footer.php');
 ?>
