@@ -30,6 +30,8 @@ $LS = new \Fr\LS(array(
       "/Assignment%202/index.php"
     ),
     "login_page" => "/Assignment%202/login.php",
-    "home_page" => "/Assignment%202/manage-account.php"
+    "home_page" => isset($_SESSION['old_page'])?
+    "/Assignment%202/".$_SESSION['old_page']:
+    "/Assignment%202/manage-account.php"
   )
 ));
