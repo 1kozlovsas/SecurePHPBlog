@@ -8,9 +8,9 @@ $_SESSION['old_page'] = '';
 ?>
 
 <center><h2>
-<a href="new-post.php">Create a new post!</a>
+<a href="new-post.php">Create a new post</a>
 <br><br>
-<a href="edit-posts.php">Edit or delete previous posts.</a>
+<a href="edit-posts.php">Edit or delete previous posts</a>
 </h2></center>
 
 <?php
