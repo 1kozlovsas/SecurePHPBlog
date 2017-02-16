@@ -10,7 +10,7 @@ $_SESSION['old_page'] = '';
  <script src="//cloud.tinymce.com/stable/tinymce.min.js?apiKey=usxf6kylya7uvf4cv4b5757vp65gi864icjj7guf9ojn43mi"></script>
   <script>tinymce.init({
   selector: 'textarea',
-  height: 100%,
+  height: 300,
   plugins: [
         "advlist autolink lists link image charmap print preview anchor",
         "searchreplace visualblocks code fullscreen",
