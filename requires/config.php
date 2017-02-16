@@ -16,7 +16,8 @@ $LS = new \Fr\LS(array(
     "table" => "users"
   ),
   "features" => array(
-    "auto_init" => true
+    "auto_init" => true,
+    "start_session" => false
   ),
   "pages" => array(
     "no_login" => array(
