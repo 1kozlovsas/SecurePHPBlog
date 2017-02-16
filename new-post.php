@@ -27,7 +27,7 @@ $_SESSION['old_page'] = '';
   // enable automatic uploads of images represented by blob or data URIs
   automatic_uploads: true,
   // URL of our upload handler (for more details check: https://www.tinymce.com/docs/configure/file-image-upload/#images_upload_url)
-  images_upload_url: 'postAcceptor.php',
+  images_upload_url: 'post-acceptor.php',
   // here we add custom filepicker only to Image dialog
   file_picker_types: 'image', 
   // and here's our custom image picker
