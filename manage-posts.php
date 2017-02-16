@@ -7,9 +7,11 @@ include('requires/header.php');
 $_SESSION['old_page'] = ''; 
 ?>
 
+<center><h2>
 <a href="new-post.php">Create a new post!</a>
 <br>
 <a href="edit-posts.php">Edit or delete previous posts.</a>
+</h2></center>
 
 <?php
 include('requires/footer.php');
