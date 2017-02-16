@@ -48,6 +48,6 @@ CREATE TABLE IF NOT EXISTS posts (
   id SERIAL,
   username text NOT NULL references users(username),
   body text NOT NULL,
-  created date NOT NULL default CURRENT_DATE,
+  created text NOT NULL,
   PRIMARY KEY (id)
 );
