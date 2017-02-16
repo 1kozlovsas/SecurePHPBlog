@@ -59,8 +59,14 @@ if(isset($_POST['action_login'])){
             </div>
             <button type="submit" class="btn btn-success" name="action_login">Sign in</button>
           </form> -->
-          <a class="navbar-brand navbar-right" href="login.php">Login</a>
-          <a class="navbar-brand navbar-right" href="create-account.php">Sign up</a>
+ 		<?php
+        if(!$LS->isLoggedIn())
+          echo '<a class="navbar-brand navbar-right" href="login.php">Login</a>';
+          echo '<a class="navbar-brand navbar-right" href="create-account.php">Sign up</a>';
+        else
+          echo '<a class="navbar-brand navbar-right" href="manage-account.php">Welcome '.$LS->getUser("username").'</a>';
+          echo '<a class="navbar-brand navbar-right" href="logout.php">Sign out</a>';
+        ?>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
