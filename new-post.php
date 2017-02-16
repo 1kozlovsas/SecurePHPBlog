@@ -14,14 +14,11 @@ $_SESSION['old_page'] = '';
 <!-- Include JS file. -->
 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.4.2/js/froala_editor.min.js'></script>
 
-<div id="froala-editor">
-  <p>Click the Code View button to see the editor content's HTML.</p>
-  <img src="/assets/editor/docs/photo14.jpg" class="fr-fil" alt="book" width="150"/>
-</div>
+<textarea id="froala-editor">Initialize the Froala WYSIWYG HTML Editor on a textarea.</textarea>
 
 <script>
   $(function() {
-    $('div#froala-editor').froalaEditor();
+    $('textarea#froala-editor').froalaEditor()
   });
 </script>
 
