@@ -18,7 +18,7 @@ $_SESSION['old_page'] = '';
 
 <?php
 
-$target_dir = "uploads/".$_SESSION['username']."";
+$target_dir = "images/".$_SESSION['username']."";
 
 $profpic = scandir($target_dir);
 
@@ -32,7 +32,7 @@ echo $profpic;
 
 <h2>Change profile picture:</h2>
 
-<form action="upload.php" method="post" enctype="multipart/form-data">
+<form action="upload_avatar.php" method="post" enctype="multipart/form-data">
 
     Select image to upload (NO FUNNY BUSINESS):
 
