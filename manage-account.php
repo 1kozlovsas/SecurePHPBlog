@@ -11,6 +11,7 @@ include('requires/header.php');
 //Make sure to clear the redirect var.
 
 $_SESSION['old_page'] = ''; 
+$_SESSION['username'] = $LS->getUser("username");
 
 ?>
 

@@ -77,7 +77,7 @@
     }
       
     //Last chance check for sanity, the image is 'resized' to its own size
-  /*  $imgwidth = $img->getImageWidth();
+    /*$imgwidth = $img->getImageWidth();
     $imgheight = $img->getImageHeight();
     if($img->resizeImage($imgwidth, $imgheight, FILTER_POINT, 0) !== TRUE){
         unlink(realpath($filetowrite));
