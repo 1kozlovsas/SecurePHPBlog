@@ -15,10 +15,12 @@ session_start();
 die();*/
   reset ($_FILES);
   $temp = current($_FILES);
- /* echo $temp['tmp_name'];
+  echo $temp['tmp_name'];
   echo "<br>";
   echo print_r($temp);
-  die();*/
+  echo "<br>";
+  echo file_exists($temp['tmp_name']);
+  die();
   if (file_exists($temp['tmp_name']) && is_uploaded_file($temp['tmp_name'])){
       
     $imageFolder = "images/".$_SESSION['username']."/";//.$LS->getUser("username")."/";
