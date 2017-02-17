@@ -80,7 +80,7 @@ $profpic = scandir($imageFolder);
         }
     }
       
-   $img->resizeImage(500, 500, FILTER_POINT, 0) 
+   $img->resizeImage(500, 500, FILTER_POINT, 0);
 
     
     // Respond to the successful upload with JSON.
