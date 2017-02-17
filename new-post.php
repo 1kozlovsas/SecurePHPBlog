@@ -65,10 +65,10 @@ $_SESSION['old_page'] = '';
  <textarea>Ayy lmao</textarea>
 <form id="submitform" method="POST" action="submit-post.php>
 <input id="hiddenId" type="hidden" name="post-html">
-<input id="buttonA" type="button" class=".btn-lg .btn-block .btn-success" value="Submit" onclick="handleclick(event);"/>
+<input id="buttonA" type="button" style=".btn-lg .btn-block .btn-success" value="Submit" onclick="handleclick(event);"/>
 </form>
 <script>function handleclick(event) {
-   document.getElementById('hiddenId').value = whatever;
+   document.getElementById('hiddenId').value = tinymce.activeEditor.getContent();
    document.getElementById('theForm').submit();
 }</script>
 <?php
