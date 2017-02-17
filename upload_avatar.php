@@ -13,9 +13,10 @@
         header("HTTP/1.0 500 Permission denied.");
         return;
   }*/
-$profpic = array_diff(scandir($imageFolder), array('..', '.'));//need to account for "." and ".." entries
+$profpic = scandir($imageFolder);
+//$profpic = array_diff(scandir($imageFolder), array('..', '.'));//need to account for "." and ".." entries
 
-  unlink($profpic);
+  unlink($profpic[2]);
 
   reset ($_FILES);
   $temp = current($_FILES);
@@ -85,7 +86,8 @@ $profpic = array_diff(scandir($imageFolder), array('..', '.'));//need to account
     // Respond to the successful upload with JSON.
     // Use a location key to specify the path to the saved image resource.
     // { location : '/your/uploaded/image/file'}
-    ("Location: http://localhost/Assignment 2/manage-account.php");
+    header("Location: manage-account.php");
+    die();
   } else {
     // Notify editor that the upload failed
     header("HTTP/1.0 500 Server Error");
