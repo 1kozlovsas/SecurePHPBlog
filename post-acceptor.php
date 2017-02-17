@@ -1,5 +1,5 @@
 <?php
-include('requires/config.php');
+//include('requires/config.php');
   /*******************************************************
    * Only these origins will be allowed to upload images *
    ******************************************************/
