@@ -8,7 +8,7 @@
   /*********************************************
    * Change this line to set the upload folder *
    *********************************************/
-  $imageFolder = "images/".$_SESSION['username']."/";//.$LS->getUser("username")."/";
+  $imageFolder = "images".$_SESSION['username']."/";//.$LS->getUser("username")."/";
  /* if(!mkdir(__DIR__."/".$imageFolder, 755)){
         header("HTTP/1.0 500 Permission denied.");
         return;
@@ -25,7 +25,7 @@ echo $profpic[2];
   }
 echo print_r($_FILES);
     echo "<br>";
-die();
+//die();
   reset ($_FILES);
   $temp = current($_FILES);
   if (is_uploaded_file($temp['tmp_name'])){
