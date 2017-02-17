@@ -45,17 +45,17 @@
         header("HTTP/1.0 500 Invalid extension.");
         return;
     }
-   /*   
+
     //Check filename length
     if (mb_strlen($temp['name'], "UTF-8") > 240){
         header("HTTP/1.0 500 File name too long.");
         return;       
     }
-    */
+
     // Accept upload if there was no origin, or if it is an accepted origin
     $filetowrite = $imageFolder . $temp['name'];
     move_uploaded_file($temp['tmp_name'], $filetowrite);
-/*
+
     //Check mime-types
     if (!in_array(exif_imagetype(realpath($filetowrite)), array(IMAGETYPE_GIF, 	IMAGETYPE_JPEG, IMAGETYPE_PNG))) {
         unlink(realpath($filetowrite));
@@ -84,7 +84,7 @@
         header("HTTP/1.0 500 Invalid image.");
         return;   
     }
-*/
+
     
     // Respond to the successful upload with JSON.
     // Use a location key to specify the path to the saved image resource.
