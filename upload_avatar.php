@@ -19,7 +19,7 @@ die();*/
   echo "<br>";
   echo print_r($temp);
   die();*/
-  if (file_exists($temp['tmp_name']) && is_uploaded_file($temp['tmp_name'])){
+  if (is_uploaded_file($temp['tmp_name'])){
     //echo "I'm inside the thing!";
     //die();
     $imageFolder = "images/".$_SESSION['username']."/";//.$LS->getUser("username")."/";
