@@ -23,7 +23,7 @@ $target_dir = "images/".$_SESSION['username']."";
 $profpic = scandir($target_dir);
 //$profpic = array_diff(scandir($target_dir), array('..', '.'));//need to account for "." and ".." entries
 echo "<b><h1><center>Oh shit, waddap?!</center></h1></b>";
-echo "<img src=".$target_dir."/".$profpic[2]." width=\"125\" height=\"125\">";
+echo "<img src=".$target_dir."/".$profpic[2]." style=\"max-width:125px; max-height:125px\">";
 ?>
 
 
