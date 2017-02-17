@@ -51,7 +51,7 @@ include('requires/config.php');
     // Accept upload if there was no origin, or if it is an accepted origin
     $filetowrite = $imageFolder . $temp['name'];
     move_uploaded_file($temp['tmp_name'], $filetowrite);
-
+/*
     //Check mime-types
     if (!in_array(exif_imagetype(realpath($filetowrite)), array(IMAGETYPE_GIF, 	IMAGETYPE_JPEG, IMAGETYPE_PNG))) {
         unlink(realpath($filetowrite));
@@ -80,7 +80,7 @@ include('requires/config.php');
         header("HTTP/1.0 500 Invalid image.");
         return;   
     }
-
+*/
     
     // Respond to the successful upload with JSON.
     // Use a location key to specify the path to the saved image resource.
