@@ -89,7 +89,7 @@
     // Respond to the successful upload with JSON.
     // Use a location key to specify the path to the saved image resource.
     // { location : '/your/uploaded/image/file'}
-    echo json_encode(array('location' => $filetowrite));
+    ("Location: http://localhost/Assignment 2/manage-account.php");
   } else {
     // Notify editor that the upload failed
     header("HTTP/1.0 500 Server Error");
