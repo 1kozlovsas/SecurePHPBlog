@@ -23,11 +23,11 @@ $target_dir = "images/".$_SESSION['username']."";
 
 $profpic = array_diff(scandir($target_dir), array('..', '.'));//need to account for "." and ".." entries
 
-
-?>
-
 echo print_r($profpic);
 echo "<img src=".$profpic[0].">";
+?>
+
+
 
 
 
