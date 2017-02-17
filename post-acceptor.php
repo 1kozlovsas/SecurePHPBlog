@@ -9,7 +9,10 @@ include('requires/config.php');
    * Change this line to set the upload folder *
    *********************************************/
   $imageFolder = "images/".$LS->getUser("username")."/";
-  mkdir(__DIR__."/".$imageFolder, 755);
+  if(!mkdir(__DIR__."/".$imageFolder, 755)){
+        header("HTTP/1.0 500 Permission denied.");
+        return;
+  }
 
   reset ($_FILES);
   $temp = current($_FILES);
