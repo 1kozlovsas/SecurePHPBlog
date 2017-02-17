@@ -79,7 +79,7 @@
     //Last chance check for sanity, the image is 'resized' to its own size
     $imgwidth = $img->getImageWidth();
     $imgheight = $img->getImageHeight();
-    if(!$img->resizeImage($imgwidth, $imgheight, FILTER_POINT, 0)){
+    if($img->resizeImage($imgwidth, $imgheight, FILTER_POINT, 0) !== TRUE){
         unlink(realpath($filetowrite));
         header("HTTP/1.0 500 Invalid image.");
         return;   
