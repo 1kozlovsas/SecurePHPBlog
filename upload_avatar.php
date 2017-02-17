@@ -1,4 +1,5 @@
 <?php
+session_start();
 //include('requires/config.php'); //This is causing problems with JSON... :/
   /*******************************************************
    * Only these origins will be allowed to upload images *
@@ -18,11 +19,13 @@ $profpic = scandir($imageFolder);
     //echo print_r($profpic);
     //echo "<br>";
 echo $imageFolder;
+echo "<br>";
 echo $profpic[2];
-  if(!unlink($imageFolder.$profpic[2])){
+echo "<br>";
+  /*if(!unlink($imageFolder.$profpic[2])){
     echo print_r($profpic);
           echo "<br>";
-  }
+  }*/
 echo print_r($_FILES);
     echo "<br>";
 die();
