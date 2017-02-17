@@ -19,9 +19,9 @@ die();*/
   echo "<br>";
   echo print_r($temp);
   die();*/
-  if ($temp['error'] === 0 && is_uploaded_file($temp['tmp_name'])){
-    echo "I'm inside the thing!";
-      die();
+  if (file_exists($temp['tmp_name']) && is_uploaded_file($temp['tmp_name'])){
+    //echo "I'm inside the thing!";
+    //die();
     $imageFolder = "images/".$_SESSION['username']."/";//.$LS->getUser("username")."/";
     $profpic = scandir($imageFolder);
     unlink($imageFolder.$profpic[2]);
@@ -95,6 +95,8 @@ die();*/
     die();
   } else {
     // Notify editor that the upload failed
-    header("HTTP/1.0 500 Server Error");
+    //header("HTTP/1.0 500 Server Error");
+    header("Location: manage-account.php");
+    die();
   }
 ?>
