@@ -69,7 +69,7 @@ $_SESSION['old_page'] = '';
 </form>
 <script>function handleclick(event) {
    document.getElementById('hiddenId').value = tinyMCE.activeEditor.getContent();
-   document.getElementById('theForm').submit();
+   document.getElementById('submitform').submit();
 }</script>
 <?php
 include('requires/footer.php');
