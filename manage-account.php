@@ -20,9 +20,8 @@ $_SESSION['old_page'] = '';
 
 $target_dir = "images/".$_SESSION['username']."";
 
-$profpic = scandir($target_dir);
+$profpic = array_diff(scandir($directory), array('..', '.'));//need to account for "." and ".." entries
 
-echo $profpic;
 
 ?>
 
