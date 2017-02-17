@@ -42,13 +42,13 @@ include('requires/config.php');
         header("HTTP/1.0 500 Invalid extension.");
         return;
     }
-      
+   /*   
     //Check filename length
     if (mb_strlen($temp['name'], "UTF-8") > 240){
         header("HTTP/1.0 500 File name too long.");
         return;       
     }
-    
+    */
     // Accept upload if there was no origin, or if it is an accepted origin
     $filetowrite = $imageFolder . $temp['name'];
     move_uploaded_file($temp['tmp_name'], $filetowrite);
