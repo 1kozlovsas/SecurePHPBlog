@@ -19,7 +19,7 @@ die();*/
   echo "<br>";
   echo print_r($temp);
   die();*/
-  if ($temp['error'] !== 0 && is_uploaded_file($temp['tmp_name'])){
+  if ($temp['error'] === 0 && is_uploaded_file($temp['tmp_name'])){
       
     $imageFolder = "images/".$_SESSION['username']."/";//.$LS->getUser("username")."/";
     $profpic = scandir($imageFolder);
