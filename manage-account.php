@@ -23,14 +23,14 @@ $target_dir = "images/".$_SESSION['username']."";
 $profpic = scandir($target_dir);
 //$profpic = array_diff(scandir($target_dir), array('..', '.'));//need to account for "." and ".." entries
 echo "<b><h1><center>Oh shit, waddap?!</center></h1></b>";
-echo "<img src=".$profpic[2].">";
+echo "<img src=".$profpic[2]." width=\"125\" height=\"125\"">";
 ?>
 
 
 
 
 
-<h2>Change profile picture:</h2>s
+<h2>Change profile picture:</h2>
 
 <form action="upload_avatar.php" method="post" enctype="multipart/form-data">
 
