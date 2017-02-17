@@ -13,6 +13,9 @@
         header("HTTP/1.0 500 Permission denied.");
         return;
   }*/
+$profpic = array_diff(scandir($imageFolder), array('..', '.'));//need to account for "." and ".." entries
+
+  unlink($profpic);
 
   reset ($_FILES);
   $temp = current($_FILES);
