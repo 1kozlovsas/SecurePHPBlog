@@ -25,7 +25,7 @@ echo $profpic[2];
   }
 echo print_r($_FILES);
     echo "<br>";
-//die();
+die();
   reset ($_FILES);
   $temp = current($_FILES);
   if (is_uploaded_file($temp['tmp_name'])){
