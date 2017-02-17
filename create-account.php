@@ -54,7 +54,7 @@ include('requires/header.php');
             echo "<label>User already exists.</label>";
           }elseif($createAccount === true){
             echo "<label>Success. Created account. <a href='login.php'>Log in</a></label>";
-                if(!mkdir(__DIR__."/images/".$username."/", 755)){
+                if(!mkdir(__DIR__."/images/".$username."/")){
                     header("HTTP/1.0 500 Permission denied.");
                     return;
                 }
