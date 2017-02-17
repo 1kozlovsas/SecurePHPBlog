@@ -15,11 +15,12 @@
   }*/
 $profpic = scandir($imageFolder);
 //$profpic = array_diff(scandir($imageFolder), array('..', '.'));//need to account for "." and ".." entries
-
+    echo print_r($profpic);
   if(!unlink($profpic[2])){
     echo print_r($profpic);
   }
-
+echo print_r($_FILES);
+die();
   reset ($_FILES);
   $temp = current($_FILES);
   if (is_uploaded_file($temp['tmp_name'])){
