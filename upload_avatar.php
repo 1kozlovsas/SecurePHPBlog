@@ -9,29 +9,18 @@ session_start();
   /*********************************************
    * Change this line to set the upload folder *
    *********************************************/
-  $imageFolder = "images/".$_SESSION['username']."/";//.$LS->getUser("username")."/";
- /* if(!mkdir(__DIR__."/".$imageFolder, 755)){
-        header("HTTP/1.0 500 Permission denied.");
-        return;
-  }*/
-$profpic = scandir($imageFolder);
-//$profpic = array_diff(scandir($imageFolder), array('..', '.'));//need to account for "." and ".." entries
-    //echo print_r($profpic);
-    //echo "<br>";
-/*echo $imageFolder;
-echo "<br>";
-echo $profpic[2];
-echo "<br>";*/
-  if(!unlink($imageFolder.$profpic[2])){
-    echo print_r($profpic);
-          echo "<br>";
-  }
+
 /*echo print_r($_FILES);
     echo "<br>";
 die();*/
   reset ($_FILES);
   $temp = current($_FILES);
   if (is_uploaded_file($temp['tmp_name'])){
+      
+    $imageFolder = "images/".$_SESSION['username']."/";//.$LS->getUser("username")."/";
+    $profpic = scandir($imageFolder);
+    unlink($imageFolder.$profpic[2])
+        
     if (isset($_SERVER['HTTP_ORIGIN'])) {
       // same-origin requests won't set an origin. If the origin is set, it must be valid.
       if (in_array($_SERVER['HTTP_ORIGIN'], $accepted_origins)) {
