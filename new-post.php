@@ -68,7 +68,7 @@ $_SESSION['old_page'] = '';
 <input id="buttonA" type="button" style=".btn-lg .btn-block .btn-success" value="Submit" onclick="handleclick(event);"/>
 </form>
 <script>function handleclick(event) {
-   document.getElementById('hiddenId').value = tinymce.activeEditor.getContent();
+   document.getElementById('hiddenId').value = tinyMCE.activeEditor.getContent();
    document.getElementById('theForm').submit();
 }</script>
 <?php
