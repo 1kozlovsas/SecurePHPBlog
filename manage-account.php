@@ -26,7 +26,7 @@ $profpic = array_diff(scandir($target_dir), array('..', '.'));//need to account 
 
 ?>
 
-
+echo print_r($profpic);
 echo "<img src=".$profpic[0].">";
 
 
