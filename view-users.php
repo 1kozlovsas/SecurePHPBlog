@@ -12,9 +12,9 @@ include ('requires/header.php');
 </thead>		
 <tbody>		 
 <?php
-$dbname = ""
-$user = ""
-$password = ""
+$dbname = "";
+$user = "";
+$password = "";
 $connect = 'host=localhost dbname='.$dbname.' user='.$user.' password='.$password; 
 $db = pg_connect($connect);
 $query = "SELECT username FROM users";             
