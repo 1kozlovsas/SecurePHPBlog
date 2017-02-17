@@ -1,5 +1,5 @@
 <?php
-//include('requires/config.php');
+//include('requires/config.php'); //This is causing problems with JSON... :/
   /*******************************************************
    * Only these origins will be allowed to upload images *
    ******************************************************/
