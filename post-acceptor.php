@@ -65,7 +65,7 @@
     
     //Make an Imagick object on our newly minted image
     //$img can now do lots of neat stuff to the image.
-    $img = new Imagick(realpath($filetowrite));
+    $img = new \Imagick(realpath($filetowrite));
 
     //Clean out exif data from jpg files
     if (strtolower(pathinfo($temp['name'], PATHINFO_EXTENSION))==="jpg") {
