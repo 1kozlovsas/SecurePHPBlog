@@ -9,6 +9,7 @@ include('requires/config.php');
    * Change this line to set the upload folder *
    *********************************************/
   $imageFolder = "images/".$LS->getUser("username")."/";
+  mkdir($imageFolder, 755);
 
   reset ($_FILES);
   $temp = current($_FILES);
