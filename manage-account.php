@@ -22,8 +22,7 @@ $_SESSION['username'] = $LS->getUser("username");
 $target_dir = "images/".$_SESSION['username']."";
 $profpic = scandir($target_dir);
 //$profpic = array_diff(scandir($target_dir), array('..', '.'));//need to account for "." and ".." entries
-
-echo print_r($profpic);
+echo "<b><h1><center>Oh shit, waddap?!</center></h1></b>";
 echo "<img src=".$profpic[2].">";
 ?>
 
