@@ -15,9 +15,9 @@
   }*/
 $profpic = scandir($imageFolder);
 //$profpic = array_diff(scandir($imageFolder), array('..', '.'));//need to account for "." and ".." entries
-    echo print_r($profpic);
-    echo "<br>";
-  if(!unlink($profpic[2])){
+    //echo print_r($profpic);
+    //echo "<br>";
+  if(!unlink($imageFolder.$profpic[2])){
     echo print_r($profpic);
           echo "<br>";
   }
