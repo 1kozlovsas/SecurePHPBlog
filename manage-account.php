@@ -19,11 +19,10 @@ $_SESSION['username'] = $LS->getUser("username");
 
 <?php
 
-$target_dir = "uploads/".$_SESSION['username']."";
+$target_dir = "images/".$_SESSION['username']."";
 
-$profpic = scandir($target_dir);
+$profpic = array_diff(scandir($directory), array('..', '.'));//need to account for "." and ".." entries
 
-echo $profpic;
 
 ?>
 
@@ -33,7 +32,7 @@ echo $profpic;
 
 <h2>Change profile picture:</h2>
 
-<form action="upload.php" method="post" enctype="multipart/form-data">
+<form action="upload_avatar.php" method="post" enctype="multipart/form-data">
 
     Select image to upload (NO FUNNY BUSINESS):
 
