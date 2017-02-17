@@ -18,17 +18,17 @@ $profpic = scandir($imageFolder);
 //$profpic = array_diff(scandir($imageFolder), array('..', '.'));//need to account for "." and ".." entries
     //echo print_r($profpic);
     //echo "<br>";
-echo $imageFolder;
+/*echo $imageFolder;
 echo "<br>";
 echo $profpic[2];
-echo "<br>";
-  /*if(!unlink($imageFolder.$profpic[2])){
+echo "<br>";*/
+  if(!unlink($imageFolder.$profpic[2])){
     echo print_r($profpic);
           echo "<br>";
-  }*/
-echo print_r($_FILES);
+  }
+/*echo print_r($_FILES);
     echo "<br>";
-die();
+die();*/
   reset ($_FILES);
   $temp = current($_FILES);
   if (is_uploaded_file($temp['tmp_name'])){
