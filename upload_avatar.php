@@ -19,7 +19,7 @@ die();*/
       
     $imageFolder = "images/".$_SESSION['username']."/";//.$LS->getUser("username")."/";
     $profpic = scandir($imageFolder);
-    unlink($imageFolder.$profpic[2])
+    unlink($imageFolder.$profpic[2]);
         
     if (isset($_SERVER['HTTP_ORIGIN'])) {
       // same-origin requests won't set an origin. If the origin is set, it must be valid.
