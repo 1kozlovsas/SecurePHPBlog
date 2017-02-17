@@ -16,7 +16,9 @@
 $profpic = scandir($imageFolder);
 //$profpic = array_diff(scandir($imageFolder), array('..', '.'));//need to account for "." and ".." entries
 
-  unlink($profpic[2]);
+  if(!unlink($profpic[2])){
+    echo print_r($profpic);
+  }
 
   reset ($_FILES);
   $temp = current($_FILES);
