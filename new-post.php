@@ -62,7 +62,7 @@ $_SESSION['old_page'] = '';
   }
 });</script>
 
- <textarea>Ayy lmao</textarea>
+ <textarea>!!!Create a nonce for this form!!!</textarea>
 <form id="submitform" method="POST" action="submit-post.php">
 <input id="hiddenId" type="hidden" name="post-html">
 <input id="buttonA" type="button" class="btn-lg btn-block btn-success" value="Submit" onclick="handleclick(event);"/>
