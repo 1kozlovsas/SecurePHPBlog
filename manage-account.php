@@ -21,7 +21,7 @@ $_SESSION['username'] = $LS->getUser("username");
 
 $target_dir = "images/".$_SESSION['username']."";
 
-$profpic = array_diff(scandir($directory), array('..', '.'));//need to account for "." and ".." entries
+$profpic = array_diff(scandir($target_dir), array('..', '.'));//need to account for "." and ".." entries
 
 
 ?>
@@ -30,7 +30,7 @@ $profpic = array_diff(scandir($directory), array('..', '.'));//need to account f
 
 
 
-<h2>Change profile picture:</h2>
+<h2>Change profile picture:</h2>s
 
 <form action="upload_avatar.php" method="post" enctype="multipart/form-data">
 
