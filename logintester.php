@@ -18,6 +18,8 @@ include('requires/header.php');
                 $msg = array("Error", "User is not activated!");
                 echo "User is not activated!";
             }
+            $msg = array("Wtf", "Does this shit work at all?");
+
             echo "<br>";
             echo print($LS->getActivationStatus($identification));
             echo "<br>";
