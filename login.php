@@ -14,7 +14,8 @@ include('requires/header.php');
         if($identification == "" || $password == ""){
             echo "<h2>Error</h2><p>Username / Password Wrong !</p>";
           //$msg = array("Error", "Username / Password Wrong !");
-        }else if(true){
+        }
+        if(true){
             echo "<h2>Error</h2><p>It is triggered!</p>";
 
         }
