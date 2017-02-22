@@ -2,28 +2,7 @@
 session_start();
 include('requires/header.php');
 ?>
-      <?php
-      $two_step_login_active = false;
-      if($LS->twoStepLogin() === false && isset($_POST['action_login'])){
-        $identification = $_GET['login'];
-        $password = $_GET['password'];
-        if($identification == "" || $password == ""){
-        }
-        else{
-            if($LS->getActivationStatus($identification)){
-                echo "User is activated!";
-            }
-            else{
-                echo "User is not activated!";
-            }
-            echo "<br>";
-            echo print($LS->getActivationStatus($identification));
-            echo "<br>";
-            echo "<h2>Error</h2><p>Username hasn't been activated!</p>";
-            die();
-        }
-      }
-      ?>
+
       
         <form action="logintester.php" method="POST" style="margin:0px auto;display:table;">
           <label>
