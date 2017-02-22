@@ -28,7 +28,8 @@ $LS = new \Fr\LS(array(
       "/Assignment%202/view-recent.php",
       "/Assignment%202/view-posts.php",
       "/Assignment%202/create-account.php",
-      "/Assignment%202/index.php"
+      "/Assignment%202/index.php",
+      "/Assignment%202/logintester.php",
     ),
     "login_page" => "/Assignment%202/login.php",
     "home_page" => isset($_SESSION['old_page'])?
