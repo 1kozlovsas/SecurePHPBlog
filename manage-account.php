@@ -6,6 +6,9 @@ $_SESSION['old_page'] = 'manage-account.php';
 
 include('requires/header.php');
 
+if($LS->getUser("role") === "admin"){
+$_SESSION['username'] = $_POST['username'];
+}
 //If code below is executing then user can see page, i.e. successful login.
 
 //Make sure to clear the redirect var.
