@@ -44,13 +44,13 @@ echo $profpic;
 
 <br>
 
-<h2>Change username</h2>
-<form action = "change-username.php" method="POST">
+<h2>Change Name of User(NOT USERNAME)</h2>
+<form action = "change-name.php" method="POST">
 
 		<label>
-			<input type="text" name="new_username">Enter username you wish to change it to.
+			<input type="text" name="new_name">Enter name you wish to change your name to.
 		</label>
-	 	<input type="submit" value="Change username pls" name="submit">
+	 	<input type="submit" value="Change name pls" name="submit">
 </form>
 
 <br>
