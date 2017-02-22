@@ -2,6 +2,7 @@
 session_start();
 include ('requires/header.php');
 ?>
+
 <?php		
 $dbname = "";
 $user = "";
