@@ -8,24 +8,20 @@ $user = "";
 $password = "";
 $username = $_SESSION['username'];
 $connect = 'host=localhost dbname='.$dbname.' user='.$user.' password='.$password; 
-if ($connect->connect_error) {
-    die("Connection failed: " . $connect->connect_error);
-}
-$stmt = $connect->prepare("DELETE FROM users WHERE username = ?");
-$stmt2 = $connect->prepare("DELETE FROM posts WHERE username = ?");
+$db = pg_connect($connect);
+pg_prepare($db, "query1","DELETE FROM users WHERE username = $1");
+pg_prepare($db, "query2","DELETE FROM posts WHERE username = $1");
+$result = pg_prepare($db, "query3","SELECT uid FROM user_devices WHERE username = $1");
+pg_execute($db, "query1", array("$username"));
+pg_execute($db, "query2", array("$username"));
+$result = pg_execute($db, "query3", array("$username"));
 
-$stmt->bind_param("s", $);
-$stmt2->bind_param("s", $);
-
-$stmt->execute();
-$stmt2->execute();
-
+pg_prepare($db, "query4", "DELETE FROM user_devices AND user_tokens WHERE uid = $1");
+pg_execute($db, "query4", array("$result[0]"));
 ?>
 
 
 <?php
-$stmt->close();
-$stmt2->close();
-$connect->close();
+pg_close($db);
 include ('requires/footer.php');
 ?>
