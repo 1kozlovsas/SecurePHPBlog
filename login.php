@@ -9,6 +9,7 @@ include('requires/header.php');
         $identification = $_POST['login'];
         $password = $_POST['password'];
         if($identification == "" || $password == ""){
+            echo "<h2>Error</h2><p>Username / Password Wrong !</p>";
           $msg = array("Error", "Username / Password Wrong !");
         }elseif($LS->userExists($identification) && !$LS->getActivationStatus($identification)){
             echo "<h2>Error</h2><p>Username hasn't been activated!</p>";
