@@ -22,7 +22,7 @@ $db = pg_connect($connect);
         }else{
           $newhash = password_hash($_POST['new_password'].$LS->config['keys']['salt'], PASSWORD_DEFAULT);
           pg_prepare($db, "updatePassword", "UPDATE users SET password =".$newhash." WHERE activation_token = $1");
-          pg_prepare($db, "deleteActivation", "UPDATE users SET activation_token = "" WHERE  activation_token = $1");
+          pg_prepare($db, "deleteActivation", "UPDATE users SET activation_token = '' WHERE  activation_token = $1");
           $success = pg_execute($db, "updatePassword", array($token));
           //$change_password = $LS->changePassword($new_password);
           if($success !== false){
