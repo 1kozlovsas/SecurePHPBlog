@@ -26,9 +26,8 @@ include('requires/header.php');
           $login = $LS->login($identification, $password, isset($_POST['remember_me']));
           if($login === false){
             echo "<h2>Error</h2><p>Username / Password Wrong !</p>";
-          else if($login === "inactive"){
+          }else if($login === "inactive"){
             echo "<h2>Error</h2><p>Account is not active!</p>";
-          }
           }else if(is_array($login) && $login['status'] == "blocked"){
             echo "<h2>Error</h2><p>Too many login attempts. You can attempt login after ". $login['minutes'] ." minutes (". $login['seconds'] ." seconds)</p>";
           }
