@@ -41,7 +41,7 @@ $db = pg_connect($connect);
     }
     ?>
 
-    <form action="<?php echo $LS->curPageURL();?>" method='POST'>
+    <form action="forgot-password.php>" method='POST'>
       <label>
         <p>New Password</p>
         <input type='password' name='new_password' />
