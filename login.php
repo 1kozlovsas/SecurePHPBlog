@@ -15,7 +15,7 @@ include('requires/header.php');
             echo "<h2>Error</h2><p>Username / Password Wrong !</p>";
           //$msg = array("Error", "Username / Password Wrong !");
         }
-        if(true){
+        else if(true){
             echo "<h2>Error</h2><p>It is triggered!</p>";
 
         }
@@ -23,13 +23,14 @@ include('requires/header.php');
                 !$LS->getActivationStatus($identification)){
             echo "<h2>Error</h2><p>Username hasn't been activated!</p>";
         }else{
-          $login = $LS->twoStepLogin($identification, $password, isset($_POST['remember_me']));
+          $login = $LS->login($identification, $password, isset($_POST['remember_me']));
           if($login === false){
             echo "<h2>Error</h2><p>Username / Password Wrong !</p>";
+          else if($login === "inactive"){
+            echo "<h2>Error</h2><p>Account is not active!</p>";
+          }
           }else if(is_array($login) && $login['status'] == "blocked"){
             echo "<h2>Error</h2><p>Too many login attempts. You can attempt login after ". $login['minutes'] ." minutes (". $login['seconds'] ." seconds)</p>";
-          }else{
-            $two_step_login_active = true;
           }
         }
       }
