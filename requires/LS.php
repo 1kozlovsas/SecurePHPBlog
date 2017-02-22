@@ -612,7 +612,7 @@ class LS {
 
       if( !isset($blocked) && ($password === false || password_verify($password . $this->config['keys']['salt'], $us_pass) ) ){
         if($cookies === true){
-          if(!getActivationStatus($username))
+          if(!$this->getActivationStatus($username))
               return "inactive";
           $_SESSION[$this->config["cookies"]["names"]["current_user"]] = $us_id;
 
