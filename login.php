@@ -15,14 +15,7 @@ include('requires/header.php');
             echo "<h2>Error</h2><p>Username / Password Wrong !</p>";
           //$msg = array("Error", "Username / Password Wrong !");
         }
-        else if(true){
-            echo "<h2>Error</h2><p>It is triggered!</p>";
-
-        }
-        else if($LS->userExists($identification) && 
-                !$LS->getActivationStatus($identification)){
-            echo "<h2>Error</h2><p>Username hasn't been activated!</p>";
-        }else{
+        else{
           $login = $LS->login($identification, $password, isset($_POST['remember_me']));
           if($login === false){
             echo "<h2>Error</h2><p>Username / Password Wrong !</p>";
