@@ -19,6 +19,10 @@ $LS = new \Fr\LS(array(
     "auto_init" => true,
     "start_session" => false
   ),
+  "keys" => array(
+    "cookie" => "A@R*JAE(G*JA#T*gajeg",
+    "salt" => "#*T(gjsE(TIWSHg9ssodpa"
+  ),
   "pages" => array(
     "no_login" => array(
     ),

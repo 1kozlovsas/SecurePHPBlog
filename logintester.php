@@ -8,6 +8,8 @@ include('requires/header.php');
         $identification = $_POST['login'];
         $password = $_POST['password'];
         if($identification == "" || $password == ""){
+        }
+        else{
             echo $LS->getActivationStatus($identification);
             echo "<br>";
             echo "<h2>Error</h2><p>Username hasn't been activated!</p>";
@@ -15,7 +17,7 @@ include('requires/header.php');
       }
       ?>
       
-        <form action="login.php" method="POST" style="margin:0px auto;display:table;">
+        <form action="logintester.php" method="POST" style="margin:0px auto;display:table;">
           <label>
             <p>Username / E-Mail</p>
             <input name="login" type="text"/>

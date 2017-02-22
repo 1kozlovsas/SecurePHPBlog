@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS users (
   avatar text,
   role text NOT NULL DEFAULT 'user',
   active boolean NOT NULL DEFAULT false,
+  activation_token text,
   PRIMARY KEY (id)
 );
 
