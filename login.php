@@ -32,7 +32,7 @@ include('requires/header.php');
           }
         }
       }
-      if(!$two_step_login_active){
+      if(true){//!$two_step_login_active){
       ?>
         <form action="login.php" method="POST" style="margin:0px auto;display:table;">
           <label>
