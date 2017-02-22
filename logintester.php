@@ -5,8 +5,8 @@ include('requires/header.php');
       <?php
       $two_step_login_active = false;
       if($LS->twoStepLogin() === false && isset($_POST['action_login'])){
-        $identification = $_POST['login'];
-        $password = $_POST['password'];
+        $identification = $_GET['login'];
+        $password = $_GET['password'];
         if($identification == "" || $password == ""){
         }
         else{
