@@ -21,6 +21,8 @@ pg_execute($db, "deleteActivation", array($token));
 ?>
 
 <?php
-pg_close($db);
 include ('requires/footer.php');
+pg_close($db);
+header("Location: login.php");
+die();
 ?>

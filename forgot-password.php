@@ -34,6 +34,7 @@ $db = pg_connect($connect);
           //$change_password = $LS->changePassword($new_password);
           if($success !== false){
             pg_execute($db, "deleteActivation", array($token));
+            pg_close($db);
             header("Location: login.php");
             die();
           }
