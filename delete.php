@@ -6,7 +6,7 @@ include ('requires/header.php');
 $dbname = "";
 $user = "";
 $password = "";
-$username = $_SESSION['username'];
+$username = $LS->getUser("username");
 $connect = 'host=localhost dbname='.$dbname.' user='.$user.' password='.$password; 
 $db = pg_connect($connect);
 pg_prepare($db, "query1","DELETE FROM users WHERE username = $1");
