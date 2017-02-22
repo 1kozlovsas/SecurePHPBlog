@@ -11,7 +11,6 @@ include('requires/header.php');
 //Make sure to clear the redirect var.
 
 $_SESSION['old_page'] = ''; 
-$_SESSION['username'] = $LS->getUser("username");
 
 ?>
 
@@ -20,13 +19,14 @@ $_SESSION['username'] = $LS->getUser("username");
 <?php
 
 $target_dir = "images/".$_SESSION['username']."";
+
 $profpic = scandir($target_dir);
-//$profpic = array_diff(scandir($target_dir), array('..', '.'));//need to account for "." and ".." entries
-echo "<b><h1><center>Oh shit, waddap?!</center></h1></b>";
-echo "<img src=".$target_dir."/".$profpic[2]." style=\"max-width:125px; max-height:125px\">";
+
+echo $profpic;
+
 ?>
 
-
+<img src="<?php echo $profpic ?>">
 
 
 
@@ -44,16 +44,41 @@ echo "<img src=".$target_dir."/".$profpic[2]." style=\"max-width:125px; max-heig
 
 <br>
 
+<h2>Change username</h2>
+<form action = "change-username.php" method="POST">
+
+		<label>
+			<input type="text" name="new_username">Enter username you wish to change it to.
+		</label>
+	 	<input type="submit" value="Change username pls" name="submit">
+</form>
+
+<br>
+<h2>Delete account(In case of leaked emails)</h2>
 <form action = "delete.php" method="POST">
 
 		<label>
 
-          <button name="delete">Delete your account.</button>
+          <input type = "submit" name="delete">Delete your account.</button>
 
         </label>
 
 </form>
 
+<br>
+
+<h2>Change password(I recommend hunter2)</h2>
+<form action = "change-password.php" method="POST">
+
+		<label>
+			<input type="text" name="old_pass">Enter your current password.
+		</label>
+		<label>
+			<input type="text" name="new_pass">Enter your new password. It can be the same, but I wouldn't recommend it.
+		</label>
+		 <input type="submit" value="Change password pls" name="submit">
+
+</form>
 
 
 <?php
