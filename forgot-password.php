@@ -1,10 +1,14 @@
 <?php
 session_start();
 include ('requires/header.php');
+if(!isset($_GET['token'])){
+    header("Location: index.php");
+    die();
+}
 $token = $_GET['token'];
-$dbname = "";
-$user = "";
-$password = "";
+$dbname = "postgres";
+$user = "postgres";
+$password = "postgres";
 
 $connect = 'host=localhost dbname='.$dbname.' user='.$user.' password='.$password; 
 $db = pg_connect($connect);
