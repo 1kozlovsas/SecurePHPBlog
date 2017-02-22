@@ -1,6 +1,6 @@
 <?php
-session_start();
-include('requires/header.php');
+//session_start();
+//include('requires/header.php');
 ?>
       <?php
       $two_step_login_active = false;
