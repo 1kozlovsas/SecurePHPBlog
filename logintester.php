@@ -10,14 +10,14 @@ include('requires/header.php');
         if($identification == "" || $password == ""){
         }
         else{
-            if($LS->getActivationStatus($identification)['active']){
+            if($LS->getActivationStatus($identification)){
                 echo "User is activated!";
             }
             else{
                 echo "User is not activated!";
             }
             echo "<br>";
-            echo print($LS->getActivationStatus($identification)['active']);
+            echo print($LS->getActivationStatus($identification));
             echo "<br>";
             echo "<h2>Error</h2><p>Username hasn't been activated!</p>";
         }
