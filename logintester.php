@@ -10,7 +10,7 @@ include('requires/header.php');
         if($identification == "" || $password == ""){
         }
         else{
-            echo $LS->getActivationStatus($identification);
+            echo print_r($LS->getActivationStatus($identification));
             echo "<br>";
             echo "<h2>Error</h2><p>Username hasn't been activated!</p>";
         }
