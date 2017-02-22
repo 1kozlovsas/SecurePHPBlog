@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS users (
   profile text,
   avatar text,
   role text NOT NULL DEFAULT 'user',
+  active boolean NOT NULL DEFAULT false,
   PRIMARY KEY (id)
 );
 

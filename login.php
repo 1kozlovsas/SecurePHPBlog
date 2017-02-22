@@ -10,6 +10,8 @@ include('requires/header.php');
         $password = $_POST['password'];
         if($identification == "" || $password == ""){
           $msg = array("Error", "Username / Password Wrong !");
+        }elseif(($LS->userExists($identification) || $LS->userExists($email)) && !$LS->getActivationStatus($identification)){
+            echo "<h2>Error</h2><p>Username hasn't been activated!</p>";
         }else{
           $login = $LS->twoStepLogin($identification, $password, isset($_POST['remember_me']));
           if($login === false){

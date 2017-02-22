@@ -42,7 +42,14 @@ include('requires/header.php');
             echo "<h2>Invalid Username</h2>", "<p>Your username is not valid. Only alphanumeric characters are allowed.</p>";
         }elseif($password != $retyped_password){
             echo "<h2>Passwords Don't Match</h2>", "<p>The passwords you entered didn't match</p>";
-        }else{
+        }elseif($LS->userExists($username) || $LS->userExists($email)){
+              echo "<label>User already exists.</label>";
+        }
+        else{
+            //Create an activation link here instead!
+            //The activation link should do a check
+            //to make sure the proper activation code
+            //was given, and then do the below actions.
           $createAccount = $LS->register($username, $password,
             array(
               "email" => $email,
@@ -50,8 +57,10 @@ include('requires/header.php');
               "created" => date("Y-m-d H:i:s") // Just for testing
             )
           );
-          if($createAccount === "exists"){
-            echo "<label>User already exists.</label>";
+        //I'm checking this outside of the else block now
+        //So it '''''shouldn't''''''' be necessary
+          //if($createAccount === "exists"){
+          //  echo "<label>User already exists.</label>";
           }elseif($createAccount === true){
             echo "<label>Success. Created account. <a href='login.php'>Log in</a></label>";
                 if(!mkdir(__DIR__."/images/".$username."/")){

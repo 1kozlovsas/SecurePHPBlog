@@ -921,7 +921,15 @@ class LS {
     }
     return $data;
   }
-
+ 
+  public function getActivationStatus($name){
+      
+    $sql = $this->dbh->prepare("SELECT active FROM ". $this->config['db']['table'] ." WHERE username = ? ORDER BY ". $this->config["db"]["columns"]["id"] ." LIMIT 1");  
+    $sql->execute(array($name));
+    $data = $sql->fetch(\PDO::FETCH_ASSOC);
+    return $data;  
+  }
+    
   /**
    * Updates the info of user
    * @param  array  $toUpdate Fields to update
