@@ -55,7 +55,7 @@ include('requires/header.php');
               "email" => $email,
               "name" => $name,
               "created" => date("Y-m-d H:i:s"), // Just for testing
-              "activation_token" => $LS->rand_string(25);
+              "activation_token" => $LS->rand_string(25)
             )
           );
         //I'm checking this outside of the else block now
