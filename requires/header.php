@@ -1,5 +1,6 @@
 <?php
 require "requires/config.php";
+require "requires/csrfprotector.php";
 if(isset($_POST['action_login'])){
 	$identification = $_POST['login'];
 	$password = $_POST['password'];
@@ -14,6 +15,7 @@ if(isset($_POST['action_login'])){
 		}
 	}
 }
+csrfProtector::init();
 ?>
 
 <!doctype html>
