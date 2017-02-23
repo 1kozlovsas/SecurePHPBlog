@@ -2,11 +2,37 @@
 session_start();
 $_SESSION['old_page'] = 'edit-posts.php';
 include('requires/header.php');
-//If code below is executing then user can see page, i.e. successful login.
-//Make sure to clear the redirect var.
-$_SESSION['old_page'] = ''; 
 ?>
 
+<h1>LIST OF DETAILS:</h1>	
+<table>		
+<thead>			
+<tr>				
+<td>Username</td>				
+<td>Post:</td>				
+<td>Created on:</td>		
+</tr>		
+</thead>	
+<tbody>		
+
+<?php	
+include ('requires/database-preamble.php');
+$res = pg_query_params($db, 'SELECT username, body, created FROM posts where username = $1',[$_GET["username"]]);	
+while($line = pg_fetch_row($res)){ ?>	
+<tr>		
+<?php foreach($line as $cell){ ?>	
+<td>	
+<?php print_r($cell);?> 
+</td>			
 <?php
-include('requires/footer.php');
+}	
+?> 	
+</tr>	
+<?php		
+}	
+?>	
+</tbody>	
+</table>
+<?php
+include ('requires/footer.php');
 ?>
