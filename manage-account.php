@@ -6,6 +6,8 @@ $_SESSION['old_page'] = 'manage-account.php';
 
 include('requires/header.php');
 
+$username = $LS->getUser("username");
+    
 if($LS->getUser("role") === "admin"){
 	$username= $_POST['username'];
 }
@@ -14,22 +16,22 @@ if($LS->getUser("role") === "admin"){
 //Make sure to clear the redirect var.
 
 $_SESSION['old_page'] = ''; 
-
+$_SESSION['username'] = $username;
 ?>
 
 <h1>PROFILE INFORMATION</h1>
 
 <?php
 
-$target_dir = "images/".$_SESSION['username']."";
+$target_dir = "images/".$username."/avatar";
 
 $profpic = scandir($target_dir);
 
-echo $profpic;
+//echo $profpic;
 
 ?>
 
-<img src="<?php echo $profpic ?>">
+<img src="<?php echo $profpic[2] ?>">
 
 
 

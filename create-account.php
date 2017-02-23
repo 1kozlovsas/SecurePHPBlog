@@ -54,7 +54,8 @@ include('requires/header.php');
             array(
               "email" => $email,
               "name" => $name,
-              "created" => date("Y-m-d H:i:s") // Just for testing
+              "created" => date("Y-m-d H:i:s"), // Just for testing
+              "activation_token" => $LS->rand_string(25);
             )
           );
         //I'm checking this outside of the else block now
@@ -64,11 +65,17 @@ include('requires/header.php');
           //}
           if($createAccount === true){
             echo "<label>Success. Created account. <a href='login.php'>Log in</a></label>";
+                if(!file_exists(__DIR__."/images/".$username."/"))
                 if(!mkdir(__DIR__."/images/".$username."/")){
                     header("HTTP/1.0 500 Permission denied.");
                     return;
                 }
-              copy(__DIR__."/profiletemp.jpg", __DIR__."/images/".$username."/profiletemp.jpg");
+                if(!file_exists(__DIR__."/images/".$username."/avatar/"))
+                if(!mkdir(__DIR__."/images/".$username."/avatar/")){
+                    header("HTTP/1.0 500 Permission denied.");
+                    return;
+                }
+              copy(__DIR__."/profiletemp.jpg", __DIR__."/images/".$username."/avatar/profiletemp.jpg");
           }
         }
       }

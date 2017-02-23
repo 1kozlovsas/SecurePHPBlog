@@ -22,7 +22,7 @@ die();*/
   if (is_uploaded_file($temp['tmp_name'])){
     //echo "I'm inside the thing!";
     //die();
-    $imageFolder = "images/".$_SESSION['username']."/";//.$LS->getUser("username")."/";
+    $imageFolder = "images/".$_SESSION['username']."/avatar/";//.$LS->getUser("username")."/";
     $profpic = scandir($imageFolder);
     unlink($imageFolder.$profpic[2]);
         

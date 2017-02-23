@@ -5,6 +5,7 @@ include('requires/header.php');
 //If code below is executing then user can see page, i.e. successful login.
 //Make sure to clear the redirect var.
 $_SESSION['old_page'] = ''; 
+$_SESSION['username'] = $LS->getUser("username"); 
 //echo __DIR__."/images/".$LS->getUser("username")."/";
 ?>
 
