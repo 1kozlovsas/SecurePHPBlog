@@ -153,7 +153,8 @@ if(isset($_POST['action_login'])){
 										}
 								}
 							ob_start();
-							/* adding double quotes for "csrfguard_inject" to prevent a message */
+	/* adding double quotes for "csrfguard_inject" to prevent: 
+          Notice: Use of undefined constant csrfguard_inject - assumed 'csrfguard_inject' */
 							register_shutdown_function("csrfguard_inject");	
 						}
 				csrfguard_start();
