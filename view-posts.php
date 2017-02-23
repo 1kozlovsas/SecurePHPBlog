@@ -22,7 +22,7 @@ or die("Could not connect");
 ?>	
 <?php	
 $res = pg_query_params($dbconn, 'SELECT username, body, created FROM posts where username = $1',[$_GET["username"]]);	
-while($line = pg_fetch_all($res)){ ?>	
+while($line = pg_fetch_row($res)){ ?>	
 <tr>		
 <?php foreach($line as $cell){ ?>	
 <td>	
