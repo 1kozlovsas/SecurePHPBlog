@@ -3,6 +3,19 @@
 session_start();
 
 $_SESSION['old_page'] = 'manage-account.php';
+if (!empty($_POST['token'])) {
+
+    if (hash_equals($_SESSION['token'], $_POST['token'])) {
+
+         continue;
+
+    } else {
+
+        die("CSRF DETECTED CSRF DETECTED");
+
+    }
+
+}
 
 include('requires/header.php');
 
