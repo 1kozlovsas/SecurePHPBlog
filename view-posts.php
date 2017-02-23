@@ -30,7 +30,7 @@ Welcome to <?php echo $details[0];?>'s blog!
 <br>
 <img src="images/<?php echo $username;?>/avatar/<?php echo $profpic[2];?>" style="background-color: #ffffff; border-style:solid; border-width: 1px">
 <br>
-<?php echo $details[1];?>
+<p><?php echo $details[1];?></p>
 </div>
 </table>
 <br>
