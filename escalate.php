@@ -2,8 +2,10 @@
 session_start();
 include ('requires/header.php');
 if($LS->getUser("role") !== "admin"){
-header('Location: login.php');
-die("YOU ARE NOT ADMIN LEAVE THIS PLACE MORTAL");
+    //User is logged in, but isn't an admin. Send them home.
+    //Sending them to login.php led to a redirect loop
+    header('Location: index.php');
+    die("YOU ARE NOT ADMIN LEAVE THIS PLACE MORTAL");
 }
 else{
 $username= $_POST['username'];
