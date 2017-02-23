@@ -11,7 +11,7 @@ if($line[0] !== $LS->getUser("username")){
     die();
 }
 
-pg_prepare($db, "deletePost","DROP posts WHERE id = $1");
+pg_prepare($db, "deletePost","DELETE FROM posts WHERE id = $1");
 
 pg_execute($db, "deletePost", array($_GET['id']));
 
