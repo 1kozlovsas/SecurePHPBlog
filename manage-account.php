@@ -57,7 +57,7 @@ $profpic = scandir($target_dir);
     }
     ?>
 <h2>Change profile:</h2><br>
-<form action="POST" method="manage-account.php">
+<form action="manage-account.php" method="POST">
 <textarea name="profile" cols=50 rows=10><?php echo $LS->getUser("profile"); ?></textarea>
 <button style="display: block;margin-top: 10px;" name='change_profile' type='submit'>Change Profile</button>
 </form>
