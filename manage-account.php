@@ -53,6 +53,7 @@ $profpic = scandir($target_dir);
             "profile" => $_POST['profile']
             )
           );
+        }
     }
     ?>
 <h2>Change profile:</h2><br>
