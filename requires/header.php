@@ -96,7 +96,7 @@ if(isset($_POST['action_login'])){
 				}
 				function csrfguard_generate_token($unique_form_name)
 					{
-						$token = random_bytes(64); // PHP 7, or via paragonie/random_compat
+						$token = openssl_random_pseudo_bytes(64); // PHP 7, or via paragonie/random_compat
 						store_in_session($unique_form_name,$token);
 						return $token;
 					}
