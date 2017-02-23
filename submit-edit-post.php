@@ -10,6 +10,6 @@ pg_execute($db, "insertPost", array($_POST['post-html'], date("Y-m-d H:i:s"), $_
 //echo $_POST['post-html'];
 
 include('requires/footer.php');
-header("Location: view-posts.php?username=".$username);
+header("Location: view-posts.php?username=".$LS->getUser("username"));
 die();
 ?>
