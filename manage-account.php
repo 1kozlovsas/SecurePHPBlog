@@ -44,30 +44,29 @@ $profpic = scandir($target_dir);
     <input type="file" name="fileToUpload" id="fileToUpload">
 
     <input type="submit" value="I solemnly swear that I am uploading an image" name="submit">
+</form>
+<br>
 
+<h2>Change profile:</h2><br>
+<form action="POST" method="manage-account.php">
+<textarea name="profile"><?php echo $LS->getUser("profile"); ?></textarea>
+<button style="display: block;margin-top: 10px;" name='change_profile' type='submit'>Change Profile</button>
 </form>
 
 <br>
-
-<h2>Change Name of User(NOT USERNAME)</h2>
+<h2>Change Name of User (NOT USERNAME)</h2>
 <form action = "change-name.php" method="POST">
 
-		<label>
-			<input type="text" name="new_name">Enter name you wish to change your name to.
-		</label>
+    <label>Enter name you wish to change your name to.</label><br>
+    <input type="text" name="new_name" placeholder="<?php echo $LS->getUser("name"); ?>"><br>
+
 	 	<input type="submit" value="Change name pls" name="submit">
 </form>
 
 <br>
-<h2>Delete account(In case of leaked emails)</h2>
+<h2>Delete account (In case of leaked emails)</h2>
 <form action = "delete-account.php" method="POST">
-
-		<label>
-
-          <button type = "submit" name="delete">Delete your account</button>
-
-        </label>
-
+    <button type = "submit" name="delete">Delete your account</button>
 </form>
 
 <br>
@@ -95,18 +94,9 @@ $profpic = scandir($target_dir);
     }
     ?>
     <form action="manage-account.php" method='POST'>
-      <label>
-        <p>Current Password</p>
-        <input type='password' name='current_password' />
-      </label>
-      <label>
-        <p>New Password</p>
-        <input type='password' name='new_password' />
-      </label>
-      <label>
-        <p>Retype New Password</p>
-        <input type='password' name='retype_password' />
-      </label>
+        <input type='password' name='current_password' placeholder='Current Password'/>
+        <input type='password' name='new_password' placeholder='New Password'/>
+        <input type='password' name='retype_password' placeholder='Retype Password'/>
       <button style="display: block;margin-top: 10px;" name='change_password' type='submit'>Change Password</button>
     </form>
 
