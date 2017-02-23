@@ -80,7 +80,7 @@ if($line[0] !== $LS->getUser("username")){
 </form>
 <script>function handleclick(event) {
    document.getElementById('hiddenHTML').value = tinyMCE.activeEditor.getContent();
-   document.getElementById('hiddenID').value = <?php echo $_GET["id"]; ?>
+   document.getElementById('hiddenID').value = <?php echo $_GET["id"]; ?>;
    document.getElementById('submitform').submit();
 }</script>
 <?php
