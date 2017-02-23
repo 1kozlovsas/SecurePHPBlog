@@ -15,6 +15,6 @@ pg_execute($db, "insertPost", array($username, $_POST['post-html'], date("Y-m-d 
 //echo $_POST['post-html'];
 
 include('requires/footer.php');
-header("Location: view-posts.php?username=".$username)
+header("Location: view-posts.php?username=".$username);
 die();
 ?>
