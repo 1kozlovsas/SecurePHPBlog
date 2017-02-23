@@ -9,7 +9,7 @@ include('requires/header.php');
 $username = $LS->getUser("username");
     
 if($LS->getUser("role") === "admin"){
-	$username= $_POST['username'];
+	$username = isset($_POST['username']):$_POST['username']?$LS->getUser("username");
 }
 //If code below is executing then user can see page, i.e. successful login.
 
