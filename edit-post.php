@@ -67,7 +67,7 @@ $_SESSION['username'] = $LS->getUser("username");
         $res = pg_query_params($db, 'SELECT body FROM posts where id = $1', [$_GET["id"]]);
         $line = pg_fetch_row($res)
 ?>
- <textarea><?php echo line[0]  ?></textarea>
+ <textarea><?php echo $line[0]  ?></textarea>
 <form id="submitform" method="POST" action="submit-post.php">
 <input id="hiddenId" type="hidden" name="post-html">
 <input id="buttonA" type="button" class="btn-lg btn-block btn-success" value="Submit" onclick="handleclick(event);"/>
