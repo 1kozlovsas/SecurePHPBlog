@@ -1,11 +1,8 @@
 <?php
 session_start();
 include('requires/header.php');
-if(!isset($_GET["username"])){
-    header("Location: view-users.php");
-    die();
-}
-$username = $_GET["username"];
+
+$username = $LS->getUser("username");
 
 include ('requires/database-preamble.php');
 $detailset = pg_query_params($db, 'SELECT name, profile FROM users WHERE username = $1 ORDER BY id DESC', [$username]);	
