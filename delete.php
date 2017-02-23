@@ -25,8 +25,8 @@ $password = "postgres";
 
 $connect = 'host=localhost dbname='.$dbname.' user='.$user.' password='.$password; 
 $db = pg_connect($connect);
-pg_prepare($db, "query1","DELETE FROM users WHERE username = $1");
-pg_prepare($db, "query2","DELETE FROM posts WHERE username = $1");
+pg_prepare($db, "query1","DELETE FROM posts WHERE username = $1");
+pg_prepare($db, "query2","DELETE FROM users WHERE username = $1");
 pg_prepare($db, "query3", "DELETE FROM user_devices WHERE uid = $1");
 pg_prepare($db, "query4", "DELETE FROM user_tokens WHERE uid = $1");
 pg_execute($db, "query1", array($username));
