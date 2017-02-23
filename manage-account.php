@@ -46,10 +46,18 @@ $profpic = scandir($target_dir);
     <input type="submit" value="I solemnly swear that I am uploading an image" name="submit">
 </form>
 <br>
-
+<?php
+    if(isset($_POST['change_profile'])){
+      if(isset($_POST['profile'])){          
+          $LS->updateUser(array(
+            "profile" => $_POST['profile']
+            )
+          );
+    }
+    ?>
 <h2>Change profile:</h2><br>
 <form action="POST" method="manage-account.php">
-<textarea name="profile" cols=100 rows=10><?php echo $LS->getUser("profile"); ?></textarea>
+<textarea name="profile" cols=50 rows=10><?php echo $LS->getUser("profile"); ?></textarea>
 <button style="display: block;margin-top: 10px;" name='change_profile' type='submit'>Change Profile</button>
 </form>
 
