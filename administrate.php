@@ -4,8 +4,10 @@ $_SESSION['old_page'] = 'administrate.php';
 include('requires/header.php');
 //User has logged in, but hasn't yet been authenticated as an admin
 if($LS->getUser("role") !== "admin"){
-header('Location: login.php');
-die("YOU ARE NOT ADMIN LEAVE THIS PLACE MORTAL");
+    //User is logged in, but isn't an admin. Send them home.
+    //Sending them to login.php led to a redirect loop
+    header('Location: index.php');
+    die("YOU ARE NOT ADMIN LEAVE THIS PLACE MORTAL");
 }
 //If code below is executing then user can see page, i.e. successful login.
 //Make sure to clear the redirect var.
