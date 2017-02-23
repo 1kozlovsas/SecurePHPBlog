@@ -39,4 +39,5 @@ delTree("images/".$username."/");
     
 pg_close($db);
 include ('requires/footer.php');
+$LS->logout();
 ?>
