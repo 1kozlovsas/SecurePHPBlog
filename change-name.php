@@ -18,4 +18,6 @@ pg_execute($db, "query1", array("$_POST[new_name]", "$username"));
 <?php
 pg_close($db);
 include ('requires/footer.php');
+header("Location: manage-account.php");
+die();
 ?>

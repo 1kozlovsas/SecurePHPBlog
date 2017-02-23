@@ -94,7 +94,7 @@ $profpic = scandir($target_dir);
       }
     }
     ?>
-    <form action="<?php echo $LS->curPageURL();?>" method='POST'>
+    <form action="manage-account.php" method='POST'>
       <label>
         <p>Current Password</p>
         <input type='password' name='current_password' />
