@@ -16,21 +16,21 @@ $res = pg_query_params($db, 'SELECT username, body, created FROM posts WHERE use
 
 $avatar_dir = "images/".$username."/avatar";
 
-$profpic = scandir($target_dir);
+$profpic = scandir($avatar_dir);
 
 ?>
 
 <link rel="stylesheet" href="css/blog.css"> <!-- Limits image size -->      
 <center>
-<h1><?php echo details[0];?>'s Blog</h1>
+<h1><?php echo $details[0];?>'s Blog</h1>
 
 <table style="width: 85%;">
 <div style="background-color: #eeeeee; border-style:solid; border-width: 2px">	
-Welcome to <?php echo details[0];?>'s blog!
+Welcome to <?php echo $details[0];?>'s blog!
 <br>
 <img src="images/<?php echo $username;?>/avatar/<?php echo $profpic[2];?>" style="background-color: #ffffff; border-style:solid; border-width: 1px">
 <br>
-<?php echo details[1];?>
+<?php echo $details[1];?>
 </div>
 </table>
 <br>
