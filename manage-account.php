@@ -64,7 +64,7 @@ $profpic = scandir($target_dir);
 
 		<label>
 
-          <button type = "submit" name="delete">Delete your account.</button>
+          <button type = "submit" name="delete">Delete your account</button>
 
         </label>
 
