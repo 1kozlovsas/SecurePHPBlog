@@ -26,7 +26,7 @@ while($line = pg_fetch_all($res)){ ?>
 <tr>		
 <?php foreach($line as $cell){ ?>	
 <td>	
-<?php echo $cell;?> 
+<?php print_r($cell);?> 
 </td>			
 <?php
 }	
