@@ -10,7 +10,7 @@ $_SESSION['username'] = $LS->getUser("username");
 
 include ('requires/database-preamble.php');
 $res = pg_query_params($db, 'SELECT username, body FROM posts where id = $1', [$_GET["id"]]);
-$line = pg_fetch_row($res)
+$line = pg_fetch_row($res);
 if($line[0] !== $LS->getUser("username")){
     //User is trying to edit someone elses posts!
     header("Location: edit-posts.php");
