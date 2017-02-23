@@ -7,6 +7,15 @@ include('requires/header.php');
 $_SESSION['old_page'] = ''; 
 $_SESSION['username'] = $LS->getUser("username"); 
 //echo __DIR__."/images/".$LS->getUser("username")."/";
+
+include ('requires/database-preamble.php');
+$res = pg_query_params($db, 'SELECT username, body FROM posts where id = $1', [$_GET["id"]]);
+$line = pg_fetch_row($res)
+if($line[0] !== $LS->getUser("username")){
+    //User is trying to edit someone elses posts!
+    header("Location: edit-posts.php");
+    die();
+}
 ?>
 
  <script src="//cloud.tinymce.com/stable/tinymce.min.js?apiKey=usxf6kylya7uvf4cv4b5757vp65gi864icjj7guf9ojn43mi"></script>
@@ -62,18 +71,16 @@ $_SESSION['username'] = $LS->getUser("username");
     input.click();
   }
 });</script>
-<?php
-        include ('requires/database-preamble.php');
-        $res = pg_query_params($db, 'SELECT body FROM posts where id = $1', [$_GET["id"]]);
-        $line = pg_fetch_row($res)
-?>
- <textarea><?php echo $line[0]  ?></textarea>
-<form id="submitform" method="POST" action="submit-post.php">
-<input id="hiddenId" type="hidden" name="post-html">
+
+ <textarea><?php echo $line[1]  ?></textarea>
+<form id="submitform" method="POST" action="submit-edit-post.php">
+<input id="hiddenHTML" type="hidden" name="post-html">
+<input id="hiddenID" type="hidden" name="id">
 <input id="buttonA" type="button" class="btn-lg btn-block btn-success" value="Submit" onclick="handleclick(event);"/>
 </form>
 <script>function handleclick(event) {
-   document.getElementById('hiddenId').value = tinyMCE.activeEditor.getContent();
+   document.getElementById('hiddenHTML').value = tinyMCE.activeEditor.getContent();
+   document.getElementById('hiddenID').value = $_GET["id"];
    document.getElementById('submitform').submit();
 }</script>
 <?php
