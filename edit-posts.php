@@ -43,11 +43,11 @@ while($line = pg_fetch_row($res)){ ?>
 </div>
 <div>
             <a href="edit-post.php?id=<?php echo $line[0];?>">                
-            <button type="button" class="btn btn-success">Edit Post
+            <button type="button" class="btn btn-success btn-lg btn-block">Edit Post
             </button>                
             </a>  
             <a href="delete-post.php?id=<?php echo $line[0];?>">                
-            <button type="button" class="btn btn-danger">Delete Post
+            <button type="button" class="btn btn-danger btn-lg btn-block">Delete Post
             </button>                
             </a>  
 </div>
