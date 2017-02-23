@@ -36,33 +36,32 @@ Welcome to <?php echo $details[0];?>'s blog!
 <br>
        
 <table style="width: 85%;">		
-<div style="background-color: #eeeeee; border-style:solid; border-width: 2px">
+
 		
 
 <?php	
 while($line = pg_fetch_row($res)){ ?>
 <tbody>
 <tr>		
-<td>	
+<td style="background-color: #eeeeee; border-style:solid; border-width: 2px">
+<div>
 <?php echo $line[1];?>
-</td>			
-	
-</tr>
-</tbody>
+</div>
 <div style="background-color: #eeeeee; border-style:solid; border-width: 0px">	
-
 <center>
     <img src="images/<?php echo $username;?>/avatar/<?php echo $profpic[2];?>" style="background-color: #ffffff; border-style:solid; border-width: 1px">
     <br>
     Posted by <?php echo $line[0];?> at <?php echo $line[2];?> 
 </center>
 </div>
-    
+</td>			
+</tr>
+</tbody> 
 <?php		
 }	
 ?>	
 
-</div>
+
 </table>
 </center>
 
