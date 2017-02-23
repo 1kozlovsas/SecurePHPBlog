@@ -47,7 +47,7 @@ while($line = pg_fetch_row($res)){ ?>
             </button>                
             </a>  
             <a href="delete-post.php?id=<?php echo $line[0];?>">                
-            <button type="button" class="btn btn-warning">Delete Post
+            <button type="button" class="btn btn-danger">Delete Post
             </button>                
             </a>  
 </div>
