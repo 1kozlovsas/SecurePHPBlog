@@ -25,7 +25,7 @@ $profpic = scandir($avatar_dir);
 <h1><?php echo $details[0];?>'s Blog</h1>
 
 <table style="width: 85%;">
-<div style="background-color: #eeeeee; border-style:solid; border-width: 2px">	
+<div style="background-color: #eeeeee; border-style:solid; border-width: 2px; width: 85%;">	
 Welcome to <?php echo $details[0];?>'s blog!
 <br>
 <img src="images/<?php echo $username;?>/avatar/<?php echo $profpic[2];?>" style="background-color: #ffffff; border-style:solid; border-width: 1px">
