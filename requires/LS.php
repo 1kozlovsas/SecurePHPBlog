@@ -733,7 +733,7 @@ class LS {
      * Wait for the cookies to be removed, then redirect
      */
     usleep(2000);
-    self::redirect($this->config['pages']['login_page']);
+    self::redirect($this->config['pages']['home_page']);
     return true;
   }
 
