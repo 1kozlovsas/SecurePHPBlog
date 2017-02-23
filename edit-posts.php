@@ -22,13 +22,13 @@ include('requires/header.php');
         while($line = pg_fetch_row($res)){ ?>	
         <tr>		
             <td>	
-                <?php echo $line[1];?> //username
+                <?php echo $line[1];?> <!--username-->
             </td>	
             <td>	
-                <?php echo $line[2];?> //body
+                <?php echo $line[2];?> <!--body-->
             </td>	
             <td>	
-                <?php echo $line[3];?> //created
+                <?php echo $line[3];?> <!--created-->
             </td>	
             <td>
             <a href="edit-post.php?id=<?php echo $line[0];?>">                
