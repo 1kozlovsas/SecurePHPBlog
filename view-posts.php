@@ -14,9 +14,9 @@ include('requires/header.php');
 </thead>	
 <tbody>		
 <?php		
-$dbname = "";
-$user = "";
-$password = "";
+$dbname = "postgres";
+$user = "postgres";
+$password = "postgres";
 $dbconn = pg_connect('host = localhost dbname='.$dbname.' user='.$user.' password='.$password)	
 or die("Could not connect");	
 ?>	
