@@ -9,7 +9,7 @@ $detailset = pg_query_params($db, 'SELECT name, profile FROM users WHERE usernam
 
 $details = pg_fetch_row($detailset);    
     
-$res = pg_query_params($db, 'SELECT username, body, created FROM posts WHERE username = $1 ORDER BY id DESC', [$username]);	
+$res = pg_query_params($db, 'SELECT id, username, body, created FROM posts WHERE username = $1 ORDER BY id DESC', [$username]);	
 
 $avatar_dir = "images/".$username."/avatar";
 
@@ -32,22 +32,22 @@ while($line = pg_fetch_row($res)){ ?>
 <tr>		
 <td style="background-color: #eeeeee; border-style:solid; border-width: 2px">
 <div>
-<?php echo $line[1];?>
+<?php echo $line[2];?>
 </div>
 <div style="background-color: #eeeeee; border-style:solid; border-width: 0px">	
 <center>
     <img src="images/<?php echo $username;?>/avatar/<?php echo $profpic[2];?>" style="background-color: #ffffff; border-style:solid; border-width: 1px">
     <br>
-    Posted by <?php echo $line[0];?> at <?php echo $line[2];?> 
+    Posted by <?php echo $line[1];?> at <?php echo $line[3];?> 
 </center>
 </div>
 <div>
             <a href="edit-post.php?id=<?php echo $line[0];?>">                
-            <button type="button" class="btn btn-info">Edit Post
+            <button type="button" class="btn btn-success">Edit Post
             </button>                
             </a>  
             <a href="delete-post.php?id=<?php echo $line[0];?>">                
-            <button type="button" class="btn btn-info">Delete Post
+            <button type="button" class="btn btn-warning">Delete Post
             </button>                
             </a>  
 </div>
