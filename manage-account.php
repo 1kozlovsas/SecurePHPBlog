@@ -80,7 +80,7 @@ $profpic = scandir($target_dir);
         $retype_password = $_POST['retype_password'];
           
         if($new_password != $retype_password){
-          echo "<p><h2>Passwords Doesn't match</h2><p>The passwords you entered didn't match. Try again.</p></p>";
+          echo "<p><h2>Passwords Don't match</h2><p>The passwords you entered didn't match. Try again.</p></p>";
         }else if($LS->login($LS->getUser("username"), $curpass, false, false) == false){
           echo "<h2>Current Password Wrong!</h2><p>The password you entered for your account is wrong.</p>";
         }else{
@@ -90,7 +90,7 @@ $profpic = scandir($target_dir);
           }
         }
       }else{
-        echo "<p><h2>Password Fields was blank</h2><p>Form fields were left blank</p></p>";
+        echo "<p><h2>Password Field was blank</h2><p>Form fields were left blank</p></p>";
       }
     }
     ?>
