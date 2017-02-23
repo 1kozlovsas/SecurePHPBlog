@@ -8,9 +8,6 @@ include('requires/header.php');
       if(isset($_POST['action_login'])){
         $identification = $_POST['login'];
         $password = $_POST['password'];
-        if($identification === "fuck"){
-            echo "That's not very nice!";
-        }
         if($identification == "" || $password == ""){
             echo "<h2>Error</h2><p>Username / Password Wrong !</p>";
           //$msg = array("Error", "Username / Password Wrong !");

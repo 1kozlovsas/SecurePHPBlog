@@ -10,12 +10,7 @@ $username= $_POST['username'];
 }
 ?>
 <?php		
-$dbname = "";
-$user = "";
-$password = "";
-$username = $LS->getUser("username");
-$connect = 'host=localhost dbname='.$dbname.' user='.$user.' password='.$password; 
-$db = pg_connect($connect);
+include ('requires/database-preamble.php');
 pg_prepare($db, "query1","UPDATE TABLE users SET role = 'admin' WHERE username = $1");
 pg_execute($db, "query1", array($username));
 

@@ -19,12 +19,7 @@ else{
 
 
 
-$dbname = "postgres";
-$user = "postgres";
-$password = "postgres";
-
-$connect = 'host=localhost dbname='.$dbname.' user='.$user.' password='.$password; 
-$db = pg_connect($connect);
+include ('requires/database-preamble.php');
 pg_prepare($db, "query1","DELETE FROM posts WHERE username = $1");
 pg_prepare($db, "query2","DELETE FROM users WHERE username = $1");
 pg_prepare($db, "query3", "DELETE FROM user_devices WHERE uid = $1");

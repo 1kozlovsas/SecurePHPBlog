@@ -4,12 +4,7 @@ include ('requires/header.php');
 ?>
 
 <?php		
-$dbname = "";
-$user = "";
-$password = "";
-$username = $LS->getUser("username");
-$connect = 'host=localhost dbname='.$dbname.' user='.$user.' password='.$password; 
-$db = pg_connect($connect);
+include ('requires/database-preamble.php');
 pg_prepare($db, "query1","SELECT password FROM users WHERE username = $1");
 $result = pg_execute($db, "query1", array("s", "$username"));
 $oldpass = password_hash($_POST['old_pass'].$LS->config['keys']['salt'], PASSWORD_DEFAULT);

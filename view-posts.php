@@ -13,15 +13,10 @@ include('requires/header.php');
 </tr>		
 </thead>	
 <tbody>		
-<?php		
-$dbname = "postgres";
-$user = "postgres";
-$password = "postgres";
-$dbconn = pg_connect('host = localhost dbname='.$dbname.' user='.$user.' password='.$password)	
-or die("Could not connect");	
-?>	
+
 <?php	
-$res = pg_query_params($dbconn, 'SELECT username, body, created FROM posts where username = $1',[$_GET["username"]]);	
+include ('requires/database-preamble.php');
+$res = pg_query_params($db, 'SELECT username, body, created FROM posts where username = $1',[$_GET["username"]]);	
 while($line = pg_fetch_row($res)){ ?>	
 <tr>		
 <?php foreach($line as $cell){ ?>	
