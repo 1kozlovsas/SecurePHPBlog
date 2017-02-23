@@ -60,11 +60,11 @@ $profpic = scandir($target_dir);
 
 <br>
 <h2>Delete account(In case of leaked emails)</h2>
-<form action = "delete.php" method="POST">
+<form action = "delete-account.php" method="POST">
 
 		<label>
 
-          <input type = "submit" name="delete">Delete your account.</button>
+          <button type = "submit" name="delete">Delete your account.</button>
 
         </label>
 
