@@ -18,7 +18,7 @@ include('requires/header.php');
 
         <?php	
         include ('requires/database-preamble.php');
-        $res = pg_query_params($db, 'SELECT id, username, body, created FROM posts where username = $1',[$_GET["username"]]);	
+        $res = pg_query_params($db, 'SELECT id, username, body, created FROM posts where username = $1',[$LS->getUser("username")]);	
         while($line = pg_fetch_row($res)){ ?>	
         <tr>		
             <td>	
