@@ -31,7 +31,7 @@ $profpic = scandir($target_dir);
 
 ?>
 
-<img src="<?php echo $profpic[2] ?>" width=250 height=250>
+<img src="<?php echo $profpic[2] ?>" style="maxwidth=250; maxheight=250">
 
 
 
