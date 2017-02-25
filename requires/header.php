@@ -67,7 +67,10 @@ if(isset($_POST['action_login'])){
         else{
           echo '<a class="navbar-brand navbar-right" href="logout.php">Sign out</a>';
           echo '<a class="navbar-brand navbar-right" href="manage-posts.php">Blayrg!</a>';
-	  echo '<a class="navbar-brand navbar-right" href="manage-account.php">Welcome '.$LS->getUser("username").'</a>';
+          if($LS->getUser("role") === "admin"){
+            echo '<a class="navbar-brand navbar-right" href="administrate.php">Admin Panel</a>';
+          }
+	      echo '<a class="navbar-brand navbar-right" href="manage-account.php">Welcome '.$LS->getUser("username").'</a>';
         }
         ?>
 
