@@ -11,7 +11,13 @@ include ('requires/database-preamble.php');
 $detailset = pg_query_params($db, 'SELECT name, profile FROM users WHERE username = $1 ORDER BY id DESC', [$username]);	
 
 $details = pg_fetch_row($detailset);    
-    
+
+if(!$details){
+    //There is no user with this name!
+    header("Location: view-users.php");
+    die();
+}
+
 $res = pg_query_params($db, 'SELECT username, body, created FROM posts WHERE username = $1 ORDER BY id DESC', [$username]);	
 
 $avatar_dir = "images/".$username."/avatar";
