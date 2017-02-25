@@ -1,7 +1,13 @@
 <?php
 session_start();
 include ('requires/header.php');
-if($LS->getUser("role") !== "admin"){
+if(!isset($_SESSION['username'])){
+	//User is not logged in. Send them to login page.	
+	header('Location: login.php');
+	die("You are not logged in!");
+	
+}
+elseif($LS->getUser("role") !== "admin"){
     //User is logged in, but isn't an admin. Send them home.
     //Sending them to login.php led to a redirect loop
     header('Location: index.php');
