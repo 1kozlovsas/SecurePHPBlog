@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('requires/header.php');
-
+include ('requires/database-preamble.php');
 $res = pg_query($db, 'SELECT username, body, created FROM posts LIMIT 10 ORDER BY id DESC');	
 
 $avatar_dir = "images/".$username."/avatar";
