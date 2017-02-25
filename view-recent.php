@@ -28,7 +28,7 @@ while($line = pg_fetch_row($res)){
 </div>
 <div style="background-color: #eeeeee; border-style:solid; border-width: 0px">	
 <center>
-    <img src="images/<?php echo $username;?>/avatar/<?php echo $profpic[2];?>" style="background-color: #ffffff; border-style:solid; border-width: 1px">
+    <img src="images/<?php echo $line[0];?>/avatar/<?php echo $profpic[2];?>" style="background-color: #ffffff; border-style:solid; border-width: 1px">
     <br>
     Posted by <?php echo $line[0];?> at <?php echo $line[2];?> 
 </center>
