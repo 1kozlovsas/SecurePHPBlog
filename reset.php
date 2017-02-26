@@ -2,7 +2,7 @@
 session_start();
 include ('requires/header.php');
 	
-if(isset($_POST["action_reset"]){
+if(isset($_POST["action_reset"])){
     $username= $_POST['username'];
     $token = $LS->rand_string(25);
     $id = $LS->getUID($username);
