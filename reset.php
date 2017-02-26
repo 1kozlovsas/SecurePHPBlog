@@ -12,6 +12,7 @@ if(isset($_POST["action_reset"])){
         pg_prepare($db, "query1","UPDATE users SET activation_token = $1 WHERE username = $2");
         pg_execute($db, "query1", array($token, $username));
         error_log($username.": 192.168.199.151/Assignment 2/activate.php?token=".$token);
+        pg_close($db);
     }
     header("Location: login.php");
     die();
@@ -25,6 +26,5 @@ if(isset($_POST["action_reset"])){
           <button style="width:150px;" name="action_reset">Reset Password</button>
         </form>
 <?php
-pg_close($db);
 include ('requires/footer.php');
 ?>
