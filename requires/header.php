@@ -70,7 +70,9 @@ if(isset($_POST['action_login'])){
           if($LS->getUser("role") === "admin"){
             echo '<a class="navbar-brand navbar-right" href="administrate.php">Admin Panel</a>';
           }
-	      echo '<a class="navbar-brand navbar-right" href="manage-account.php">Welcome '.$LS->getUser("username").'</a>';
+          else{
+            echo '<a class="navbar-brand navbar-right" href="manage-account.php">Welcome '.$LS->getUser("username").'</a>';
+          }
         }
         ?>
 

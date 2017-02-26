@@ -26,7 +26,7 @@ if($LS->getUser("role") === "admin"){
 }
 
 $id = $LS->getUID($username);
-echo "Id is ".$id;
+
 //If code below is executing then user can see page, i.e. successful login.
 
 //Make sure to clear the redirect var.
