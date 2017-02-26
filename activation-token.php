@@ -23,4 +23,6 @@ error_log($username.": 192.168.199.151/Assignment 2/activate.php?token=".$token)
 <?php
 pg_close($db);
 include ('requires/footer.php');
+header("Location: administrate.php");
+die("Goin' back to the future");
 ?>

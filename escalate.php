@@ -22,4 +22,6 @@ pg_execute($db, "query1", array($username));
 <?php
 pg_close($db);
 include ('requires/footer.php');
+header("Location: administrate.php");
+die("Goin' back to the future");
 ?>

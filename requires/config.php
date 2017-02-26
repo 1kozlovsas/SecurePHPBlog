@@ -35,6 +35,7 @@ $LS = new \Fr\LS(array(
       "/Assignment%202/index.php",
       "/Assignment%202/forgot-password.php",
       "/Assignment%202/activate.php",
+      "/Assignment%202/reset.php"
     
     ),
     "login_page" => "/Assignment%202/login.php",
