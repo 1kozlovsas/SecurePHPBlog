@@ -29,11 +29,20 @@ $_SESSION['old_page'] = '';
 	<input type="submit" name="submit" value="Check out a list of users">
 </form>
 <br>
-<form action="delete-account.php">
+<form action="delete-account.php" method="POST">
 	<input type="text" name="username" placeholder="Username">
 	<input type="submit" name="submit" value="Delete user">
 </form>
-	
+<br>
+<form action="escalate.php" method="POST">
+	<input type="text" name="username" placeholder="Username">
+	<input type="submit" name="submit" value="Make user an administrator">
+</form>
+<br>
+<form action="activation-token.php" method="POST">
+	<input type="text" name="username" placeholder="Username">
+	<input type="submit" name="submit" value="Generate activation link">
+</form>
 <?php
 include('requires/footer.php');
 ?>

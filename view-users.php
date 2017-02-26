@@ -39,7 +39,8 @@ echo '<tr>
 <a href="view-posts.php?username='.$row['username'].'">                
 <button type="button" class="btn btn-info">'.$row['username'].'
 </button>                
-</a>            
+</a>      
+</td>
 </tr>';            
 }            
 ?>				
