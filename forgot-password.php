@@ -6,12 +6,7 @@ if(!isset($_GET['token'])){
     die();
 }
 $token = $_GET['token'];
-$dbname = "postgres";
-$user = "postgres";
-$password = "postgres";
-
-$connect = 'host=localhost dbname='.$dbname.' user='.$user.' password='.$password; 
-$db = pg_connect($connect);
+include('requires/database-preamble.php')
 ?>
 
 <?php
