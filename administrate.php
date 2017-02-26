@@ -17,21 +17,21 @@ $_SESSION['old_page'] = '';
 <br>
 <h2>Your command list awaits.</h2>
 <form action = "manage-account.php" method="POST">
-	<input type="text" name="username">
+	<input type="text" name="username" placeholder="Username">
 	<input type="submit" name="submit" value="Edit a user's profile">
 </form>
 <br>
 <form action = "create-account.php" method="POST">
-	<input type="submit" name="submit">Create a new user
+	<input type="submit" name="submit" value="Create a new user">
 </form>
 <br>
 <form action = "view-users.php" method="POST">
-	<input type="submit" name="submit">Check out a list of users
+	<input type="submit" name="submit" value="Check out a list of users">
 </form>
 <br>
 <form action="delete-account.php">
-	<input type="text" name="username">Username to delete
-	<input type="submit" name="submit">Delete
+	<input type="text" name="username" placeholder="Username">
+	<input type="submit" name="submit" value="Delete user">
 </form>
 	
 <?php
