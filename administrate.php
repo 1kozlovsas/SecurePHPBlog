@@ -17,7 +17,7 @@ $_SESSION['old_page'] = '';
 <br>
 <h2>Your command list awaits.</h2>
 <form action = "manage-account.php" method="POST">
-	<input type="text" name="username">Lookup a user's profile
+	<input type="text" name="username">Edit a user's profile
 	<input type="submit" name="submit">
 </form>
 <br>

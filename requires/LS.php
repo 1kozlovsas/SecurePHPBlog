@@ -931,6 +931,14 @@ class LS {
     return $data['active'];  
   }
     
+  public function getUID($name){
+      
+    $sql = $this->dbh->prepare("SELECT id FROM ". $this->config['db']['table'] ." WHERE username = ? ORDER BY ". $this->config["db"]["columns"]["id"] ." LIMIT 1");  
+    $sql->execute(array($name));
+    $data = $sql->fetch(\PDO::FETCH_ASSOC);
+    return $data['id'];  
+  }
+    
   /**
    * Updates the info of user
    * @param  array  $toUpdate Fields to update

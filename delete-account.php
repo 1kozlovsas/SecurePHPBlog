@@ -10,7 +10,9 @@ function delTree($dir) {
 session_start();
 include ('requires/header.php');
 if($LS->getUser("role") === "admin"){
-$username = $_POST["username"];
+//Username is either sent by POST, SESSION, or
+//is set to the administrators name.
+$username = isset($_POST["username"])?$_POST["username"]:(isset($_SESSION["username"])?$_SESSION["username"]:$LS->getUser("username"));
 }
 else{
 	$username = $LS->getUser("username");

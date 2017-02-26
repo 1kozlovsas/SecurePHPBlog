@@ -22,8 +22,10 @@ include('requires/header.php');
 $username = $LS->getUser("username");
     
 if($LS->getUser("role") === "admin"){
-	$username = isset($_POST['username'])?$_POST['username']:$LS->getUser("username");
+	$username = isset($_POST['username'])?$_POST['username']:(isset($_SESSION['username'])?$_SESSION['username']:$LS->getUser("username"));
 }
+
+$id = $LS->getUID($username);
 //If code below is executing then user can see page, i.e. successful login.
 
 //Make sure to clear the redirect var.
@@ -58,20 +60,20 @@ $profpic = scandir($target_dir);
 
     <input type="submit" value="I solemnly swear that I am uploading an image" name="submit">
 </form>
-<br>
 <?php
     if(isset($_POST['change_profile'])){
       if(isset($_POST['profile'])){          
-          $LS->updateUser(array(
-            "profile" => $_POST['profile']
-            )
+          $LS->updateUser(
+              array("profile" => $_POST['profile']),
+              $id
           );
         }
     }
-    ?>
+?>
+<br>
 <h2>Change profile:</h2><br>
 <form action="manage-account.php" method="POST">
-<textarea name="profile" cols=50 rows=10><?php echo $LS->getUser("profile"); ?></textarea>
+<textarea name="profile" cols=50 rows=10><?php echo $LS->getUser("profile", $id); ?></textarea>
 <button style="display: block;margin-top: 10px;" name='change_profile' type='submit'>Change Profile</button>
 </form>
 
@@ -80,7 +82,7 @@ $profpic = scandir($target_dir);
 <form action = "change-name.php" method="POST">
 
     <label>Enter name you wish to change your name to.</label><br>
-    <input type="text" name="new_name" placeholder="<?php echo $LS->getUser("name"); ?>"><br>
+    <input type="text" name="new_name" placeholder="<?php echo $LS->getUser("name", $id); ?>"><br>
 
 	 	<input type="submit" value="Change name pls" name="submit">
 </form>
@@ -102,10 +104,10 @@ $profpic = scandir($target_dir);
           
         if($new_password != $retype_password){
           echo "<p><h2>Passwords Don't match</h2><p>The passwords you entered didn't match. Try again.</p></p>";
-        }else if($LS->login($LS->getUser("username"), $curpass, false, false) == false){
+        }else if($LS->login($LS->getUser("username", $id), $curpass, false, false) == false){
           echo "<h2>Current Password Wrong!</h2><p>The password you entered for your account is wrong.</p>";
         }else{
-          $change_password = $LS->changePassword($new_password);
+          $change_password = $LS->changePassword($new_password, $id);
           if($change_password === true){
             echo "<h2>Password Changed Successfully</h2>";
           }
