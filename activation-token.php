@@ -14,7 +14,7 @@ $token = $LS->rand_string(25);
 ?>
 <?php		
 include ('requires/database-preamble.php');
-pg_prepare($db, "query1","UPDATE TABLE users SET activation_token = $1 WHERE username = $2");
+pg_prepare($db, "query1","UPDATE users SET activation_token = $1 WHERE username = $2");
 pg_execute($db, "query1", array($token, $username));
 error_log($username.": 192.168.199.151/Assignment 2/activate.php?token=".$token);
 ?>

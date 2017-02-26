@@ -13,7 +13,7 @@ $username= $_POST['username'];
 ?>
 <?php		
 include ('requires/database-preamble.php');
-pg_prepare($db, "query1","UPDATE TABLE users SET role = 'admin' WHERE username = $1");
+pg_prepare($db, "query1","UPDATE users SET role = 'admin' WHERE username = $1");
 pg_execute($db, "query1", array($username));
 
 ?>
