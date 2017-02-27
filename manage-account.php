@@ -44,7 +44,7 @@ $target_dir = "images/".$username."/avatar";
 $profpic = scandir($target_dir);
 
 //echo $profpic;
-if(null !== $profpic[2]){
+if(sizeof($profpic) > 2){
 echo '<img src="'.$target_dir.'/'.$profpic[2].'" style="max-width:250px; max-height:250px">';
                      }
 else{
