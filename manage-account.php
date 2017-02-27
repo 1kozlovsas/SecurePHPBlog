@@ -45,10 +45,10 @@ $profpic = scandir($target_dir);
 
 //echo $profpic;
 if(null !== profpic[2]){
-echo '<img src="'.$target_dir.'/'.$profpic[2].'" style="max-width:250px; max-height:250px">'
+echo '<img src="'.$target_dir.'/'.$profpic[2].'" style="max-width:250px; max-height:250px">';
                      }
 else{
-    echo '<img src="profiletemp.jpg" style="max-width:250px; max-height:250px">'
+    echo '<img src="profiletemp.jpg" style="max-width:250px; max-height:250px">';
 }
 ?>
 
