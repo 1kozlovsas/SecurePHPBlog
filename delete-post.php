@@ -18,6 +18,6 @@ pg_execute($db, "deletePost", array($_GET['id']));
 //echo $_POST['post-html'];
 
 include('requires/footer.php');
-header("Location: edit-posts.php);
+header("Location: edit-posts.php");
 die();
 ?>
