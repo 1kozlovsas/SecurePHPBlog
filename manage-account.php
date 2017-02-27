@@ -44,11 +44,13 @@ $target_dir = "images/".$username."/avatar";
 $profpic = scandir($target_dir);
 
 //echo $profpic;
-
+if(isset(profpic[2])){
+echo '<img src="'.$target_dir.'/'.$profpic[2].'" style="max-width:250px; max-height:250px">'
+                     }
+else{
+    echo '<img src="profiletemp.jpg" style="max-width:250px; max-height:250px">'
+}
 ?>
-
-<img src="<?php echo $target_dir."/".$profpic[2] ?>" style="max-width:250px; max-height:250px">
-
 
 
 <h2>Change profile picture:</h2>

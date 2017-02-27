@@ -32,6 +32,7 @@ die();*/
         header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
       } else {
         header("HTTP/1.0 403 Origin Denied");
+        header("Location: manage-account.php");
         return;
       }
     }
@@ -46,18 +47,21 @@ die();*/
     // Sanitize input
     if (preg_match("/([^\w\s\d\-_~,;:\[\]\(\).])|([\.]{2,})/", $temp['name'])) {
         header("HTTP/1.0 500 Invalid file name.");
+        header("Location: manage-account.php");
         return;
     }
 
     // Verify extension
     if (!in_array(strtolower(pathinfo($temp['name'], PATHINFO_EXTENSION)), array("gif", "jpg", "png"))) {
         header("HTTP/1.0 500 Invalid extension.");
+        header("Location: manage-account.php");
         return;
     }
 
     //Check filename length
     if (mb_strlen($temp['name'], "UTF-8") > 240){
         header("HTTP/1.0 500 File name too long.");
+        header("Location: manage-account.php");
         return;       
     }
 
@@ -69,6 +73,7 @@ die();*/
     if (!in_array(exif_imagetype(realpath($filetowrite)), array(IMAGETYPE_GIF, 	IMAGETYPE_JPEG, IMAGETYPE_PNG))) {
         unlink(realpath($filetowrite));
         header("HTTP/1.0 500 Invalid MIME type.");
+        header("Location: manage-account.php");
         return;
     }
     
