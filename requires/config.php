@@ -23,6 +23,9 @@ $LS = new \Fr\LS(array(
     "cookie" => "A@R*JAE(G*JA#T*gajeg",
     "salt" => "#*T(gjsE(TIWSHg9ssodpa"
   ),
+  "brute_force" => array(
+    "tries" => "10"
+  ),
   "pages" => array(
     "no_login" => array(
     ),
