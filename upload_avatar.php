@@ -10,7 +10,7 @@ if(!empty($_POST['token'])) {
 }
 else{
 	//May be a user refreshing, notify admin.
-	error_log("NOTICE: POSSIBLE CSRF ATTEMPT WITH ".$username."'s ACCOUNT-POST VARIABLE TOKEN IS EMPTY. OCCURRED AT ".$_SESSION['old_page']);
+	error_log("NOTICE: POSSIBLE CSRF ATTEMPT WITH ".$username."'s ACCOUNT-POST VARIABLE TOKEN IS EMPTY. OCCURRED AT upload-avatar.php");
 }
 
 $_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(32));
