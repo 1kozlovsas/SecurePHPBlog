@@ -9,8 +9,8 @@ $username = $_GET["username"];
 if (!empty($_POST['token'])) {
 
     if (hash_equals($_SESSION['token'], $_POST['token'])) {
-
-	unset($_SESSION['token']);         
+	//Let program continue if hashes match. Line below will clear out the token variable, which will trigger alarms.
+	//unset($_SESSION['token']);         
 
     } else {
 
