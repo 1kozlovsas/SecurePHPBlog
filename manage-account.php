@@ -3,11 +3,12 @@
 session_start();
 
 $_SESSION['old_page'] = 'manage-account.php';
+
 if (!empty($_POST['token'])) {
 
     if (hash_equals($_SESSION['token'], $_POST['token'])) {
-
-         continue;
+	//clear token value so we can generate new nonce
+	unset($_SESSION['token']);         
 
     } else {
 
@@ -16,6 +17,10 @@ if (!empty($_POST['token'])) {
     }
 
 }
+//generating new nonce and binding to session var
+$_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(32));
+
+$token = $_SESSION['token'];
 
 include('requires/header.php');
 
@@ -62,6 +67,7 @@ else{
     <input type="file" name="fileToUpload" id="fileToUpload">
 
     <input type="submit" value="I solemnly swear that I am uploading an image" name="submit">
+	<input type="hidden" name="token" value="<?php echo $token; ?>">
 </form>
 <?php
     if(isset($_POST['change_profile'])){
@@ -78,6 +84,7 @@ else{
 <form action="manage-account.php" method="POST">
 <textarea name="profile" cols=50 rows=10><?php echo $LS->getUser("profile", $id); ?></textarea>
 <button style="display: block;margin-top: 10px;" name='change_profile' type='submit'>Change Profile</button>
+	<input type="hidden" name="token" value="<?php echo $token; ?>">
 </form>
 
 <br>
@@ -88,12 +95,14 @@ else{
     <input type="text" name="new_name" placeholder="<?php echo $LS->getUser("name", $id); ?>"><br>
 
 	 	<input type="submit" value="Change name pls" name="submit">
+	<input type="hidden" name="token" value="<?php echo $token; ?>">
 </form>
 
 <br>
 <h2>Delete account (In case of leaked emails)</h2>
 <form action = "delete-account.php" method="POST">
     <button type = "submit" name="delete">Delete your account</button>
+	<input type="hidden" name="token" value="<?php echo $token; ?>">
 </form>
 
 <br>
@@ -125,6 +134,7 @@ else{
         <input type='password' name='new_password' placeholder='New Password'/>
         <input type='password' name='retype_password' placeholder='Retype Password'/>
       <button style="display: block;margin-top: 10px;" name='change_password' type='submit'>Change Password</button>
+	    <input type="hidden" name="token" value="<?php echo $token; ?>">
     </form>
 
 
