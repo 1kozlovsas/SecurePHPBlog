@@ -7,12 +7,12 @@ ini_set("display_errors", "on");
 require __DIR__ . "/LS.php";
 $LS = new \Fr\LS(array(
   "db" => array(
-    "type" => "postgresql",
-    "host" => "localhost",
-    "port" => 5432,
-    "username" => "postgres",
-    "password" => "postgres",
-    "name" => "postgres",
+    "type" => "mysql",
+    "host" => "158.85.107.106",
+    "port" => 3306,
+    "username" => "blog_admin",
+    "password" => "Qh2v1?7o",
+    "name" => "blog_base",
     "table" => "users"
   ),
   "features" => array(
@@ -20,8 +20,8 @@ $LS = new \Fr\LS(array(
     "start_session" => false
   ),
   "keys" => array(
-    "cookie" => "A@R*JAE(G*JA#T*gajeg",
-    "salt" => "#*T(gjsE(TIWSHg9ssodpa"
+    "cookie" => "jj89j*J*(J(*JH98h98h9)&(*H(&H)))",
+    "salt" => "s43s4zy5ydi76fo87go87ilyHTE^U$"
   ),
   "brute_force" => array(
     "tries" => "10"

@@ -27,7 +27,7 @@ include('requires/header.php');
 $username = $LS->getUser("username");
     
 if($LS->getUser("role") === "admin"){
-	$username = isset($_POST['username'])?$_POST['username']:(isset($_SESSION['username'])?$_SESSION['username']:$LS->getUser("username"));
+	$username = !empty($_POST['username'])?$_POST['username']:(!empty($_SESSION['username'])?$_SESSION['username']:$LS->getUser("username"));
 }
 
 $id = $LS->getUID($username);
