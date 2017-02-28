@@ -4,6 +4,21 @@ $_SESSION['old_page'] = 'new-post.php';
 include('requires/header.php');
 //If code below is executing then user can see page, i.e. successful login.
 //Make sure to clear the redirect var.
+if (!empty($_POST['token'])) {
+
+    if (hash_equals($_SESSION['token'], $_POST['token'])) {
+
+	unset($_SESSION['token']);         
+
+    } else {
+
+        die("CSRF DETECTED CSRF DETECTED");
+
+    }
+
+}
+$_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(32));
+$token = $_SESSION['token'];
 $_SESSION['old_page'] = ''; 
 $_SESSION['username'] = $LS->getUser("username"); 
 //echo __DIR__."/images/".$LS->getUser("username")."/";
@@ -63,10 +78,11 @@ $_SESSION['username'] = $LS->getUser("username");
   }
 });</script>
 
- <textarea>!!!Create a nonce for this form!!!</textarea>
+ <textarea>Nonce implemented.</textarea>
 <form id="submitform" method="POST" action="submit-post.php">
 <input id="hiddenId" type="hidden" name="post-html">
 <input id="buttonA" type="button" class="btn-lg btn-block btn-success" value="Submit" onclick="handleclick(event);"/>
+ <input type="hidden" name="token" value="<?php echo $token; ?>">
 </form>
 <script>function handleclick(event) {
    document.getElementById('hiddenId').value = tinyMCE.activeEditor.getContent();

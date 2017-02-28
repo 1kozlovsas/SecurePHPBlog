@@ -6,6 +6,19 @@ if(!isset($_GET["username"])){
     die();
 }
 $username = $_GET["username"];
+if (!empty($_POST['token'])) {
+
+    if (hash_equals($_SESSION['token'], $_POST['token'])) {
+	//Let program continue if hashes match. Line below will clear out the token variable, which will trigger alarms.
+	//unset($_SESSION['token']);         
+
+    } else {
+
+        die("CSRF DETECTED CSRF DETECTED");
+
+    }
+
+}
 
 include ('requires/database-preamble.php');
 $detailset = pg_query_params($db, 'SELECT name, profile FROM users WHERE username = $1 ORDER BY id DESC', [$username]);	
