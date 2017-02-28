@@ -19,6 +19,11 @@ if (!empty($_POST['token'])) {
     }
 
 }
+else{
+	//May be a user refreshing, notify admin.
+	error_log("NOTICE: POSSIBLE CSRF ATTEMPT WITH ".$username."'s ACCOUNT-POST VARIABLE TOKEN IS EMPTY. OCCURRED AT ".$_SESSION['old_page']);
+}
+
 
 include ('requires/database-preamble.php');
 $detailset = pg_query_params($db, 'SELECT name, profile FROM users WHERE username = $1 ORDER BY id DESC', [$username]);	
