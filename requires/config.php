@@ -7,12 +7,12 @@ ini_set("display_errors", "on");
 require __DIR__ . "/LS.php";
 $LS = new \Fr\LS(array(
   "db" => array(
-    "type" => "mysql",
-    "host" => "158.85.107.106",
-    "port" => 3306,
-    "username" => "blog_admin",
-    "password" => "Qh2v1?7o",
-    "name" => "blog_base",
+    "type" => "postgresql",
+    "host" => "localhost",
+    "port" => 5432,
+    "username" => "postgres",
+    "password" => "postgres",
+    "name" => "postgres",
     "table" => "users"
   ),
   "features" => array(
