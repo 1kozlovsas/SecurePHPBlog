@@ -13,7 +13,6 @@ $res = pg_query($db, 'SELECT username, body, created FROM posts ORDER BY id DESC
        
 <table style="width: 85%;">		
 
-		
 
 <?php	
 while($line = pg_fetch_row($res)){ 
@@ -28,7 +27,13 @@ while($line = pg_fetch_row($res)){
 </div>
 <div style="background-color: #eeeeee; border-style:solid; border-width: 0px">	
 <center>
-    <img src="images/<?php echo $line[0];?>/avatar/<?php echo $profpic[2];?>" style="background-color: #ffffff; border-style:solid; border-width: 1px">
+<?php
+    if(sizeof($profpic) > 2){
+    echo '<img src="images/'.$line[0].'/avatar/'.$profpic[2].'" style="background-color: #ffffff; border-style:solid; border-width: 1px">';
+                     }
+else{
+    echo '<img src="profiletemp.jpg" style="max-width:250px; max-height:250px">';
+}
     <br>
     Posted by <?php echo $line[0];?> at <?php echo $line[2];?> 
 </center>
