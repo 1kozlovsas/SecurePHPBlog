@@ -14,11 +14,14 @@ if(isset($_POST['action_login'])){
 		}
 	}
 }
+//Ugly hack to allow header.php and csrf.php to play ball
+//when submitting forms to the same page they're on.
+if(empty($_POST['token'])) {
+    //generating new nonce and binding to session var
+    $_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(32));
 
-//generating new nonce and binding to session var
-$_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(32));
-
-$token = $_SESSION['token'];
+    $token = $_SESSION['token'];
+}
 ?>
 
 <!doctype html>

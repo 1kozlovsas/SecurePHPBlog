@@ -93,10 +93,9 @@ else{
 
 <br>
     <?php echo isset($_SESSION['passfail'])?$_SESSION['passfail']:"";
-          echo "<br>";
           unset($_SESSION['passfail']);
     ?>
-    <form action="manage-account.php" method='POST'>
+    <form action="change-password.php" method='POST'>
         <input type='password' name='current_password' placeholder='Current Password'/>
         <input type='password' name='new_password' placeholder='New Password'/>
         <input type='password' name='retype_password' placeholder='Retype Password'/>
