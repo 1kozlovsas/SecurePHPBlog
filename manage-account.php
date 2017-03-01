@@ -4,19 +4,6 @@ session_start();
 
 $_SESSION['old_page'] = 'manage-account.php';
 
-if (!empty($_POST['token'])) {
-
-    if (hash_equals($_SESSION['token'], $_POST['token'])) {
-	//clear token value so we can generate new nonce
-	unset($_SESSION['token']);         
-
-    } else {
-
-        die("CSRF DETECTED CSRF DETECTED");
-
-    }
-
-}
 //generating new nonce and binding to session var
 $_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(32));
 
@@ -32,12 +19,33 @@ if($LS->getUser("role") === "admin"){
 
 $id = $LS->getUID($username);
 
+<<<<<<< HEAD
 if(isnull($id)){
     //admin probably entered a bad username.
     //If a standard user doesn't have an id somehow
     //this will cause a redirect loop.
     header("Location: administrate.php");
     die();
+=======
+if(!empty($_POST['token'])) {
+
+    if (hash_equals($_SESSION['token'], $_POST['token'])) {
+
+	unset($_SESSION['token']);         
+
+    } else {
+
+	//if invalid token is provided.
+
+        die("CSRF DETECTED CSRF DETECTED");
+
+    }
+
+}
+else{
+	//May be a user refreshing, notify admin.
+	error_log("NOTICE: POSSIBLE CSRF ATTEMPT WITH ".$username."'s ACCOUNT-POST VARIABLE TOKEN IS EMPTY. OCCURRED AT ".$_SESSION['old_page']);
+>>>>>>> 7186d74d60b3a35484dc68b9a533d3b29eabf993
 }
 
 //If code below is executing then user can see page, i.e. successful login.
