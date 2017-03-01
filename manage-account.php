@@ -4,10 +4,7 @@ session_start();
 
 $_SESSION['old_page'] = 'manage-account.php';
 
-//generating new nonce and binding to session var
-$_SESSION['token'] = bin2hex(openssl_random_pseudo_bytes(32));
 
-$token = $_SESSION['token'];
 
 include('requires/header.php');
 
@@ -19,34 +16,16 @@ if($LS->getUser("role") === "admin"){
 
 $id = $LS->getUID($username);
 
-<<<<<<< HEAD
+
 if(isnull($id)){
     //admin probably entered a bad username.
     //If a standard user doesn't have an id somehow
     //this will cause a redirect loop.
     header("Location: administrate.php");
     die();
-=======
-if(!empty($_POST['token'])) {
-
-    if (hash_equals($_SESSION['token'], $_POST['token'])) {
-
-	unset($_SESSION['token']);         
-
-    } else {
-
-	//if invalid token is provided.
-
-        die("CSRF DETECTED CSRF DETECTED");
-
-    }
-
 }
-else{
-	//May be a user refreshing, notify admin.
-	error_log("NOTICE: POSSIBLE CSRF ATTEMPT WITH ".$username."'s ACCOUNT-POST VARIABLE TOKEN IS EMPTY. OCCURRED AT ".$_SESSION['old_page']);
->>>>>>> 7186d74d60b3a35484dc68b9a533d3b29eabf993
-}
+
+
 
 //If code below is executing then user can see page, i.e. successful login.
 
@@ -54,6 +33,7 @@ else{
 
 $_SESSION['old_page'] = ''; 
 $_SESSION['username'] = $username;
+$_SESSION['id'] = $id;
 ?>
 
 <h1>PROFILE INFORMATION</h1>
@@ -122,28 +102,9 @@ else{
 </form>
 
 <br>
-<?php
-    if(isset($_POST['change_password'])){
-      if(isset($_POST['current_password']) && $_POST['current_password'] != "" && isset($_POST['new_password']) && $_POST['new_password'] != "" && isset($_POST['retype_password']) && $_POST['retype_password'] != "" && isset($_POST['current_password']) && $_POST['current_password'] != ""){
-          
-        $curpass = $_POST['current_password'];
-        $new_password = $_POST['new_password'];
-        $retype_password = $_POST['retype_password'];
-          
-        if($new_password != $retype_password){
-          echo "<p><h2>Passwords Don't match</h2><p>The passwords you entered didn't match. Try again.</p></p>";
-        }else if($LS->login($LS->getUser("username", $id), $curpass, false, false) == false){
-          echo "<h2>Current Password Wrong!</h2><p>The password you entered for your account is wrong.</p>";
-        }else{
-          $change_password = $LS->changePassword($new_password, $id);
-          if($change_password === true){
-            echo "<h2>Password Changed Successfully</h2>";
-          }
-        }
-      }else{
-        echo "<p><h2>Password Field was blank</h2><p>Form fields were left blank</p></p>";
-      }
-    }
+    <?php echo isset($_SESSION['passfail'])?$_SESSION['passfail']:"";
+          echo "<br>";
+          unset($_SESSION['passfail']);
     ?>
     <form action="manage-account.php" method='POST'>
         <input type='password' name='current_password' placeholder='Current Password'/>
