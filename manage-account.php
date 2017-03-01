@@ -65,19 +65,9 @@ else{
     <input type="submit" value="I solemnly swear that I am uploading an image" name="submit">
 	<input type="hidden" name="token" value="<?php echo $token; ?>">
 </form>
-<?php
-    if(isset($_POST['change_profile'])){
-      if(isset($_POST['profile'])){          
-          $LS->updateUser(
-              array("profile" => $_POST['profile']),
-              $id
-          );
-        }
-    }
-?>
 <br>
 <h2>Change profile:</h2><br>
-<form action="manage-account.php" method="POST">
+<form action="change-profile.php" method="POST">
 <textarea name="profile" cols=50 rows=10><?php echo $LS->getUser("profile", $id); ?></textarea>
 <button style="display: block;margin-top: 10px;" name='change_profile' type='submit'>Change Profile</button>
 	<input type="hidden" name="token" value="<?php echo $token; ?>">
