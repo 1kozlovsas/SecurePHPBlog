@@ -2,7 +2,7 @@
 /**
  * For Development Purposes
  */
-ini_set("display_errors", "on");
+ini_set("display_errors", "off");
 
 require __DIR__ . "/LS.php";
 $LS = new \Fr\LS(array(

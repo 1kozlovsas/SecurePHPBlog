@@ -12,7 +12,13 @@ include ('requires/header.php');
 if($LS->getUser("role") === "admin"){
 //Username is either sent by POST, SESSION, or
 //is set to the administrators name.
-$username = !empty($_POST["username"])?$_POST["username"]:(!empty($_SESSION["username"])?$_SESSION["username"]:$LS->getUser("username"));
+    if(!empty($_POST["username"])){
+      $username =   $_POST["username"];
+    }
+    else{
+        header("Location: administrate.php");
+        die();
+    }
 }
 else{
 	$username = $LS->getUser("username");

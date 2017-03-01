@@ -32,6 +32,14 @@ if($LS->getUser("role") === "admin"){
 
 $id = $LS->getUID($username);
 
+if(isnull($id)){
+    //admin probably entered a bad username.
+    //If a standard user doesn't have an id somehow
+    //this will cause a redirect loop.
+    header("Location: administrate.php");
+    die();
+}
+
 //If code below is executing then user can see page, i.e. successful login.
 
 //Make sure to clear the redirect var.
