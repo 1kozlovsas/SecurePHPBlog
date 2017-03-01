@@ -8,8 +8,8 @@ function delTree($dir) {
   } 
 
 session_start();
-include ('requires/header.php');
 include('requires/csrf.php');
+include ('requires/header.php');
 if($LS->getUser("role") === "admin"){
 //Username is either sent by POST, SESSION, or
 //is set to the administrators name.

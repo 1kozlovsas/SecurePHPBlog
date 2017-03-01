@@ -1,7 +1,7 @@
 <?php
 session_start();
-include("requires/header.php");
 include('requires/csrf.php');
+include("requires/header.php");
 ?>
 <?php
     if(isset($_POST['change_password'])){

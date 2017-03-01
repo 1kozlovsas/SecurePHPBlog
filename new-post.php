@@ -4,7 +4,6 @@ $_SESSION['old_page'] = 'new-post.php';
 include('requires/header.php');
 //If code below is executing then user can see page, i.e. successful login.
 //Make sure to clear the redirect var.
-include('requires/csrf.php');
 
 $_SESSION['old_page'] = ''; 
 $_SESSION['username'] = $LS->getUser("username"); 

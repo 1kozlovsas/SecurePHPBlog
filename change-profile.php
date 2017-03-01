@@ -1,9 +1,9 @@
 <?php
 
 session_start();
+include('requires/csrf.php');
 
 include('requires/header.php');
-include('requires/csrf.php');
 
 if(isset($_POST['change_profile'])){
       if(isset($_POST['profile'])){          

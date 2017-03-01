@@ -1,7 +1,7 @@
 <?php
 session_start();
-include('requires/header.php');
 include('requires/csrf.php');
+include('requires/header.php');
 include ('requires/database-preamble.php');
 $username = $LS->getUser("username");
 

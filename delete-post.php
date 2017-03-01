@@ -1,7 +1,7 @@
 <?php
 session_start();
-include('requires/header.php');
 include('requires/csrf.php');
+include('requires/header.php');
 include ('requires/database-preamble.php');
 
 $res = pg_query_params($db, 'SELECT username FROM posts where id = $1', [$_GET['id']]);

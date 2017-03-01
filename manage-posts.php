@@ -2,8 +2,8 @@
 session_start();
 //generating CSRF tokens MY WAY. 
 $_SESSION['old_page'] = 'manage-posts.php';
-include('requires/header.php');
 include('requires/csrf.php');
+include('requires/header.php');
 //If code below is executing then user can see page, i.e. successful login.
 //Make sure to clear the redirect var.
 $_SESSION['old_page'] = ''; 
