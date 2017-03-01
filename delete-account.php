@@ -43,6 +43,10 @@ delTree("images/".$username."/");
     
 pg_close($db);
 include ('requires/footer.php');
+if($LS->getUser("role") === "admin"){
+    header("Location: administrate.php");
+    die();
+}
 $LS->logout();
 header("Location: index.php");
 die();
