@@ -6,6 +6,7 @@ include('requires/header.php');
       <?php
       //$two_step_login_active = false;
       if(isset($_POST['action_login'])){
+        include('requires/csrf.php');
         $identification = $_POST['login'];
         $password = $_POST['password'];
         if($identification == "" || $password == ""){
@@ -40,6 +41,8 @@ include('requires/header.php');
             </p>
           </label>
           <div clear></div>
+            <input type="hidden" name="token" value="<?php echo $token; ?>">
+
           <button style="width:150px;" name="action_login">Log In</button>
         </form>
       <?php

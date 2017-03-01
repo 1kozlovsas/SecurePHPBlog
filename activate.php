@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('requires/header.php');
+include('requires/csrf.php');
 if(!isset($_GET['token'])){
     header("Location: index.php");
     die();

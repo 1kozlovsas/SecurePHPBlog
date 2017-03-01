@@ -1,6 +1,7 @@
 <?php
 session_start();
 include ('requires/header.php');
+include('requires/csrf.php');
 if($LS->getUser("role") !== "admin"){
     //User is logged in, but isn't an admin. Send them home.
     //Sending them to login.php led to a redirect loop

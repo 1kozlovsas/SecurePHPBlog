@@ -3,6 +3,7 @@ session_start();
 include ('requires/header.php');
 	
 if(isset($_POST["action_reset"])){
+    include('requires/csrf.php');
     $username= $_POST['username'];
     $token = $LS->rand_string(25);
     $id = $LS->getUID($username);
@@ -23,6 +24,7 @@ if(isset($_POST["action_reset"])){
             <p>Username / E-Mail</p>
             <input name="username" type="text"/>
           </label><br/>
+          <input type="hidden" name="token" value="<?php echo $token; ?>">
           <button style="width:150px;" name="action_reset">Reset Password</button>
         </form>
 <?php

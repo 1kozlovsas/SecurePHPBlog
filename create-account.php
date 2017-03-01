@@ -23,12 +23,14 @@ include('requires/header.php');
         <label>
           <input name="name" placeholder="Name" />
         </label>
+          <input type="hidden" name="token" value="<?php echo $token; ?>">
         <label>
           <button name="submit">Register</button>
         </label>
       </form>
       <?php
       if( isset($_POST['submit']) ){
+        include('requires/csrf.php');
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password = $_POST['pass'];

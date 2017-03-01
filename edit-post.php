@@ -10,6 +10,11 @@ $_SESSION['username'] = $LS->getUser("username");
 
 include ('requires/database-preamble.php');
 $res = pg_query_params($db, 'SELECT username, body FROM posts where id = $1', [$_GET["id"]]);
+if(pg_num_rows($res) < 1){
+    //No such id exists
+    header("Location: edit-posts.php");
+    die();
+}
 $line = pg_fetch_row($res);
 if($line[0] !== $LS->getUser("username")){
     //User is trying to edit someone elses posts!
@@ -76,6 +81,7 @@ if($line[0] !== $LS->getUser("username")){
 <form id="submitform" method="POST" action="submit-edit-post.php">
 <input id="hiddenHTML" type="hidden" name="post-html">
 <input id="hiddenID" type="hidden" name="id">
+<input type="hidden" name="token" value="<?php echo $token; ?>">
 <input id="buttonA" type="button" class="btn-lg btn-block btn-success" value="Submit" onclick="handleclick(event);"/>
 </form>
 <script>function handleclick(event) {

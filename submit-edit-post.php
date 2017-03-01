@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('requires/header.php');
+include('requires/csrf.php');
 
 include ('requires/database-preamble.php');
 pg_prepare($db, "editPost","UPDATE posts SET (body, created) = ($1, $2) WHERE id = $3");

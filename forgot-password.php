@@ -12,7 +12,7 @@ include('requires/database-preamble.php')
 <?php
     if(isset($_POST['change_password'])){
       if(isset($_POST['new_password']) && $_POST['new_password'] != "" && isset($_POST['retype_password']) && $_POST['retype_password'] != ""){
-          
+        include('requires/csrf.php');
         $new_password = $_POST['new_password'];
         $retype_password = $_POST['retype_password'];
           
@@ -49,6 +49,7 @@ include('requires/database-preamble.php')
         <p>Retype New Password</p>
         <input type='password' name='retype_password' />
       </label>
+        <input type="hidden" name="token" value="<?php echo $token; ?>">
       <button style="display: block;margin-top: 10px;" name='change_password' type='submit'>Change Password</button>
     </form>
 
