@@ -1,6 +1,23 @@
 <?php
 session_start();
-include('requires/csrf.php');
+if(!empty($_POST['token'])) {
+
+    if (hash_equals($_SESSION['token'], $_POST['token'])) {
+
+	unset($_SESSION['token']);         
+
+    } else {
+
+	//if invalid token is provided.
+
+        die("CSRF DETECTED CSRF DETECTED");
+    }
+
+}
+else{
+	//May be a user refreshing, notify admin.
+	error_log("NOTICE: POSSIBLE CSRF ATTEMPT WITH ".$username."'s ACCOUNT-POST VARIABLE TOKEN IS EMPTY. OCCURRED AT ".$_SESSION['old_page']);
+}
 //include('requires/config.php'); //This is causing problems with JSON... :/
   /*******************************************************
    * Only these origins will be allowed to upload images *
