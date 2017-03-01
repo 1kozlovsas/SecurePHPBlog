@@ -34,6 +34,7 @@ while($line = pg_fetch_row($res)){
 else{
     echo '<img src="profiletemp.jpg" style="max-width:250px; max-height:250px">';
 }
+?>
     <br>
     Posted by <?php echo $line[0];?> at <?php echo $line[2];?> 
 </center>
