@@ -17,7 +17,7 @@ if($LS->getUser("role") === "admin"){
 $id = $LS->getUID($username);
 
 
-if(isnull($id)){
+if(is_null($id)){
     //admin probably entered a bad username.
     //If a standard user doesn't have an id somehow
     //this will cause a redirect loop.
