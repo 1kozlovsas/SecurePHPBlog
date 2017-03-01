@@ -18,7 +18,6 @@ $_SESSION['old_page'] = '';
 <h2>Your command list awaits.</h2>
 <form action = "manage-account.php" method="POST">
 	<input type="text" name="username" placeholder="Username">
-    <input type="hidden" name="token" value="<?php echo $token; ?>">
 	<input type="submit" name="submit" value="Edit a user's profile">
 </form>
 <br>
